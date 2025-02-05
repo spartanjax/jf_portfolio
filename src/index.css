@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+*{
+    font-family: "Tajawal", serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: NONE;
+    color: inherit;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.container{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+
+.navBut {
+    color: black;
+    font-size: 25px;
+    border: 0;
+    outline: 0;
+    background: 0;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: all .25s;
+}
+
+.navBut:hover{
+    color: dimgrey;
+    letter-spacing: 10px;
+}
+

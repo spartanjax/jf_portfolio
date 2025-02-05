@@ -1,0 +1,22 @@
+nav {
+    width: 100%;
+    padding: 4px 0;
+    top: 0;
+    left: 0;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.logo {
+    width: 60px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 5px 30px;
+    font-size: 25px;
+}
