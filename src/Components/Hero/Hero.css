@@ -1,7 +1,7 @@
 .hero-container{
     width: 100%;
     min-height: 100vh;
-    background-image: linear-gradient(white, gray);
+    /* background-image: linear-gradient(white, gray); */
     align-items: center;
     display: flex;
     background-position: center;
@@ -52,7 +52,7 @@ hr {
     cursor: pointer;
     font-weight: 300;
     transition: 0.4s ease-in;
-    font-size: 17px;
+    font-size: 18px;
     background: none;
     padding: 2px;
     border: 1px solid black;

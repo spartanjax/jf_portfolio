@@ -1,13 +1,14 @@
 nav {
     width: 100%;
-    padding: 4px 0;
+    padding: 5px 0;
     top: 0;
     left: 0;
-    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+    position: fixed;
+    transition: .5s;
+    z-index: 1000;
 }
 
 .logo {
@@ -19,4 +20,9 @@ nav ul li {
     display: inline-block;
     margin: 5px 30px;
     font-size: 25px;
+}
+
+.dark-nav{
+    top: 0;
+    background-color: rgb(38, 150, 94);
 }

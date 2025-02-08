@@ -1,0 +1,57 @@
+.about {
+    background-color:cornflowerblue;
+    left: 0;
+}
+
+.about .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.about h1 {
+    color: white;
+    font-size: 2.5rem;
+    text-align: left;
+    padding: 1rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-left: 12px;
+}
+
+.about h3 {
+    color: rgb(75, 74, 74);
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-left: 30px;
+    margin-top: -20px;
+}
+
+.about .blurb {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: left;
+    padding: 1rem;
+    top: 0;
+    left: 0;
+    margin-top: -20px;
+    width: 70%;
+}
+ 
+.about .blurb p{
+    color: white;
+    font-size: 1rem;
+    text-align: left;
+    padding: 1rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}

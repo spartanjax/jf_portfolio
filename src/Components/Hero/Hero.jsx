@@ -1,8 +1,21 @@
 import React from 'react'
 import './Hero.css'
+import CV from '../../assets/jf_cv_2025.pdf'
 import heroImg from '../../assets/HeroPhoto/king.jpg'
+import { Link, Element } from 'react-scroll';
 
 const Hero = () => {
+  function download(url) {
+    console.log("test");
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = url.split('/').pop();
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  
   return (
     <div className='hero-container'>
       <div className='hero-image'>
@@ -13,9 +26,11 @@ const Hero = () => {
             <hr></hr>
             <h2>University of Auckland</h2>
             <h2>BSc in CS/Maths</h2>
-            <button className="btn">About Me</button>
+            <button className="btn">
+              <Link to="about" smooth={true} offset={-150} duration={500}>About Me</Link>
+            </button>
             <br/><br/>
-            <button className="btn">Download CV</button>
+            <button className="btn" onClick={()=>download(CV)}>Download CV</button>
         </div>
     </div>
   )
