@@ -1,6 +1,9 @@
 .about {
     background-color:#7886C7;
     box-shadow: 0 0 4cqh rgba(0, 0, 0, 0.8);
+    /* width: 95%;
+    margin-left: 2.5%;
+    border-radius: 10px; */
 }
 
 
@@ -14,7 +17,7 @@
     margin-top: -20px;
 }
 
-.about .blurb {
+.about #blurb {
     flex-direction: row;
     justify-content: space-between;
     align-items: left;
@@ -23,7 +26,7 @@
     width: 70%;
 }
  
-.about .blurb p{
+.about #blurb p{
     color: white;
     font-size: 1rem;
     text-align: left;

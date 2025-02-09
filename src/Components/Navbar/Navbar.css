@@ -30,6 +30,7 @@ nav ul li a:hover {
 .dark-nav{
     top: 0;
     background-color: #2D336B;
+    border-bottom: 1px black solid;
 }
 
 .dark-nav ul li a{

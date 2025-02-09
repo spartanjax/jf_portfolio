@@ -7,7 +7,7 @@ const Navbar = () => {
   const [sticky, setSticky] = React.useState(false);
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 10) {
         setSticky(true);
       } else {
         setSticky(false);
@@ -18,7 +18,7 @@ const Navbar = () => {
 
   return (
     <nav className={`container ${sticky? 'dark-nav' : ''}`}>
-        <Link to="hero-container" smooth={true} offset={0} duration={500}>
+        <Link to="hero-container" smooth={true} offset={-100} duration={500}>
           <img src={logo} alt="JF Logo" className='logo' />
         </Link>
         <ul>

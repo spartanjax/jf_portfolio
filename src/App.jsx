@@ -1,4 +1,5 @@
 import React from 'react'
+import Overlay from './Components/Overlay/overlay'
 import Navbar from './Components/Navbar/Navbar'
 import Hero from './Components/Hero/Hero'
 import About from './Components/About Me/about'
@@ -24,16 +25,33 @@ const App = () => {
   //     }
   //   });
   // }
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+
+  const HiddenLeft = document.querySelectorAll('.hidden-left');
+  const HiddenRight = document.querySelectorAll('.hidden-right');
+  const Popup = document.querySelectorAll('.popup');
+
+  HiddenLeft.forEach((hidden) => observer.observe(hidden));
+  HiddenRight.forEach((hidden) => observer.observe(hidden));
+  Popup.forEach((hidden) => observer.observe(hidden));
 
   return (
     <div>
+      <Overlay/>
       <section id="homep"><Navbar/><Hero/></section>
       <section id="aboutp"><About/></section>
       <section id="experiencep"><Experience/></section>
       <section id="projectsp"><Projects/></section>
       <section id="contactsp"></section>
-      
-      
     </div>
   )
 }

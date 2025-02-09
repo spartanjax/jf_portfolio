@@ -3,8 +3,8 @@ import './section.css'
 
 const section = ({children, title, id}) => {
   return (
-    <div class='s_contain' id={id}>
-      <h1>{title}</h1>
+    <div className='s-contain' id={id}>
+      <h1 className="hidden-left">{title}</h1>
       {children}
     </div>
   )
