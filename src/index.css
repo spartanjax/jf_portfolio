@@ -36,13 +36,13 @@ a{
     outline: 0;
     background: 0;
     cursor: pointer;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     transition: all .25s;
 }
 
 .navBut:hover{
     color: dimgrey;
-    letter-spacing: 5px;
+    letter-spacing: 4px;
 }
 
 .navBut.dark.active{

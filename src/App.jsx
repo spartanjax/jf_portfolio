@@ -36,13 +36,16 @@ const App = () => {
     });
   });
 
-  const HiddenLeft = document.querySelectorAll('.hidden-left');
-  const HiddenRight = document.querySelectorAll('.hidden-right');
-  const Popup = document.querySelectorAll('.popup');
-
-  HiddenLeft.forEach((hidden) => observer.observe(hidden));
-  HiddenRight.forEach((hidden) => observer.observe(hidden));
-  Popup.forEach((hidden) => observer.observe(hidden));
+  function show(){
+    const HiddenLeft = document.querySelectorAll('.hidden-left');
+    const HiddenRight = document.querySelectorAll('.hidden-right');
+    const Popup = document.querySelectorAll('.popup');
+    HiddenLeft.forEach((hidden) => observer.observe(hidden));
+    HiddenRight.forEach((hidden) => observer.observe(hidden));
+    Popup.forEach((hidden) => observer.observe(hidden));
+  }
+ 
+  window.addEventListener('load', show);
 
   return (
     <div>
