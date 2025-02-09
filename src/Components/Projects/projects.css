@@ -1,9 +1,4 @@
 .projects{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
     padding-bottom: 1000px;
 }
 

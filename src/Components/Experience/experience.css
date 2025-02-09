@@ -1,0 +1,16 @@
+.experience {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* background-color: #1a1a1a; */
+    /* box-shadow: 0 0 3cqh rgba(0, 0, 0, 0.5); */
+    width: 100%;
+}
+
+p {
+    color: white;
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 300;
+    letter-spacing: 2px;
+}

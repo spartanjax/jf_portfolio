@@ -1,16 +1,21 @@
 import React from 'react'
 import './about.css'
+import AboutPhoto from '../../assets/HeroPhoto/sing.jpg'
+import Section from '../Section/section'
 
 const about = () => {
   return (
     <div className="about">
-        <div className="container">
-            <h1>Hi, I'm Jackson!</h1>
-            <h3>Student at the Unversity of Auckland | BSc in Mathematics and Computer Science</h3>
+        <Section title="Hi, I'm Jackson!" dark={true} id='about'>
+          <h3>Student at the Unversity of Auckland | BSc in Mathematics and Computer Science</h3>
             <div className='blurb'>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <p><b>Hey there!</b> Thanks for stopping by. I'm Jackson, a problem solver at heart with a passion for coding, puzzles, and mathematics. Currently in my third year pursuing a Bachelor of Science in Computer Science and Mathematics at the University of Auckland, I'm particularly fascinated by AI and its rapidly evolving future—a field full of endless possibilities and exciting challenges.</p>
+                <p id="second_p">Outside of tech, you'll often find me on the ice, playing hockey—a sport I’ve loved for years. I also enjoy staying active through the gym and running, always looking for new ways to challenge myself. When I’m not coding or working out, I value spending quality time with friends and family, whether it's a casual hangout or an exciting adventure.</p>
             </div>
-        </div>
+            <div className="image-container">
+                <img src={AboutPhoto} alt="AboutPhoto" />
+            </div>
+        </Section>
     </div>
   )
 }

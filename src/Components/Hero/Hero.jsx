@@ -6,7 +6,6 @@ import { Link, Element } from 'react-scroll';
 
 const Hero = () => {
   function download(url) {
-    console.log("test");
     const a = document.createElement('a');
     a.href = url;
     a.download = url.split('/').pop();
@@ -30,7 +29,7 @@ const Hero = () => {
               <Link to="about" smooth={true} offset={-150} duration={500}>About Me</Link>
             </button>
             <br/><br/>
-            <button className="btn" onClick={()=>download(CV)}>Download CV</button>
+            <button className="btn" onClick={()=>download(CV)}>Resume</button>
         </div>
     </div>
   )

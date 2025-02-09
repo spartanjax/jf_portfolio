@@ -1,15 +1,13 @@
 import React from 'react'
 import './projects.css'
+import Section from '../Section/section'
 
 const projects = () => {
   return (
     <div className="projects">
-        <div className="container">
-            <h1>Projects</h1>
-            <div className='bottom'>
-                test
-            </div>
-        </div>
+        <Section title="Projects">
+            <p>test hello</p>
+        </Section>
     </div>
   )
 }
