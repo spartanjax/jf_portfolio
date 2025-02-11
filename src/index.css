@@ -6,8 +6,10 @@ Light Blue: #A9B5DF
 Blue: #7886C7
 Dark Blue: #2D336B */
 
+:root {--primary: #111111; --secondary: #222222;}
+
 body {
-    background-image: linear-gradient(white, gray);
+    background-image: linear-gradient(var(--secondary), gray);
 }
 
 *{
@@ -30,7 +32,6 @@ a{
 }
 
 .navBut {
-    color: black;
     font-size: 22px;
     border: 0;
     outline: 0;

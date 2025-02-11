@@ -7,25 +7,21 @@ import Experience from './Components/Experience/experience'
 import Projects from './Components/Projects/projects'
 
 const App = () => {
-  // let sections = document.querySelectorAll('section');
-  // let navLinks = document.querySelectorAll('.navBut dark-nav');
 
-  // window.onscroll = () => {
-  //   sections.forEach(sec => {
-  //     let top = window.scrollY;
-  //     let offset = sec.offsetTop-150;
-  //     let height = sec.offsetHeight;
-  //     let id = sec.getAttribute('id');
+//   White: #FFF2F2
+// Light Blue: #A9B5DF
+// Blue: #7886C7
+// Dark Blue: 
 
-  //     if (top >= offset && top < offset + height) {
-  //       navLinks.forEach(links => {
-  //         links.classList.remove('active');
-  //         document.querySelector(id).classList.add('active');
-  //       });
-  //     }
-  //   });
-  // }
-  
+
+  function componentDidMount() {
+    const root = document.documentElement;
+    root.style.setProperty('--primary', '#2D336B');
+    root.style.setProperty('--secondary', '#7886C7');
+    }
+
+  componentDidMount();
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
