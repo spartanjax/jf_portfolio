@@ -1,4 +1,4 @@
-:root{--primary: "#123456";}
+:root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #c51490; --quaternary: #FFF2F2; --grey: #123456;}
 
 nav {
     width: 100%;
@@ -26,7 +26,7 @@ nav ul li {
 
 nav ul li a:hover {
     text-decoration: none;
-    color: #7886C7;
+    color: var(--secondary);
 }
 
 .dark-nav{
@@ -40,5 +40,5 @@ nav ul li a:hover {
 }
 
 .dark-nav ul li a:hover{
-    color: #A9B5DF;
+    color: var(--tertiary);
 }

@@ -8,16 +8,19 @@ import Projects from './Components/Projects/projects'
 
 const App = () => {
 
-//   White: #FFF2F2
-// Light Blue: #A9B5DF
-// Blue: #7886C7
-// Dark Blue: 
+//   White: 
+// Light Blue: rgb(169, 181, 223)
+// Blue: #7886C7  rgb(120, 134, 199)
+// Dark Blue: #2D336B rgb(45, 51, 107)
 
 
   function componentDidMount() {
     const root = document.documentElement;
-    root.style.setProperty('--primary', '#2D336B');
-    root.style.setProperty('--secondary', '#7886C7');
+    root.style.setProperty('--primary', 'rgb(45, 51, 107)');
+    root.style.setProperty('--secondary', 'rgb(120, 134, 199)');
+    root.style.setProperty('--tertiary', 'rgb(169, 181, 223)');
+    root.style.setProperty('--quaternary', 'rgb(212, 212, 212)');
+    root.style.setProperty('--grey', 'rgb(66, 66, 66)');
     }
 
   componentDidMount();
@@ -27,7 +30,7 @@ const App = () => {
       if(entry.isIntersecting) {
         entry.target.classList.add("show");
       } else {
-        entry.target.classList.remove("show");
+        // entry.target.classList.remove("show");
       }
     });
   });

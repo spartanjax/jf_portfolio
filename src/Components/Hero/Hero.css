@@ -1,3 +1,5 @@
+:root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #c51490; --quaternary: #FFF2F2; --grey: #123456;}
+
 .hero-container{
     width: 100%;
     min-height: 100vh;
@@ -31,13 +33,13 @@
     font-size: 50px;
     font-weight: 300;
     line-height: 1;
-    color: #2D336B;
+    color: var(--primary);
 }
 
 .hero-text h2{
     font-size: 22px;
     font-weight: 300;
-    color:  #7886C7;
+    color:  var(--secondary);
     line-height: 1.4; 
 }
 

@@ -6,10 +6,10 @@ Light Blue: #A9B5DF
 Blue: #7886C7
 Dark Blue: #2D336B */
 
-:root {--primary: #111111; --secondary: #222222;}
+:root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #7886C7; --quaternary: #FFF2F2;}
 
 body {
-    background-image: linear-gradient(var(--secondary), gray);
+    background-image: linear-gradient(var(--quaternary), var(--primary));
 }
 
 *{

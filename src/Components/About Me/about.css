@@ -1,5 +1,8 @@
+:root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #c51490; --quaternary: #FFF2F2; --grey: #123456;}
+
+
 .about {
-    background-color:#7886C7;
+    background-color:var(--secondary);
     box-shadow: 0 0 4cqh rgba(0, 0, 0, 0.8);
     /* width: 95%;
     margin-left: 2.5%;
@@ -8,7 +11,7 @@
 
 
 .about h3 {
-    color: rgb(66, 66, 66);
+    color: var(--grey);
     font-size: 1rem;
     text-align: left;
     font-weight: 300;
@@ -23,7 +26,7 @@
     align-items: left;
     top: 0;
     left: 0;
-    width: 70%;
+    width: 100%;
 }
  
 .about #blurb p{
