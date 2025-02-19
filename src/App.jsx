@@ -1,10 +1,11 @@
-import React from 'react'
-import Overlay from './Components/Overlay/overlay'
-import Navbar from './Components/Navbar/Navbar'
-import Hero from './Components/Hero/Hero'
-import About from './Components/About Me/about'
-import Experience from './Components/Experience/experience'
-import Projects from './Components/Projects/projects'
+import React from 'react';
+import Overlay from './Components/Overlay/overlay';
+import Navbar from './Components/Navbar/Navbar';
+import Hero from './Components/Hero/Hero';
+import About from './Components/About Me/about';
+import Experience from './Components/Experience/experience';
+import Projects from './Components/Projects/projects';
+import Contact from "./Components/Contact/contact";
 
 const App = () => {
 
@@ -13,13 +14,12 @@ const App = () => {
 // Blue: #7886C7  rgb(120, 134, 199)
 // Dark Blue: #2D336B rgb(45, 51, 107)
 
-
   function componentDidMount() {
     const root = document.documentElement;
     root.style.setProperty('--primary', 'rgb(45, 51, 107)');
     root.style.setProperty('--secondary', 'rgb(120, 134, 199)');
     root.style.setProperty('--tertiary', 'rgb(169, 181, 223)');
-    root.style.setProperty('--quaternary', 'rgb(212, 212, 212)');
+    root.style.setProperty('--quaternary', 'rgb(240, 241, 252)');
     root.style.setProperty('--grey', 'rgb(66, 66, 66)');
     }
 
@@ -53,7 +53,7 @@ const App = () => {
       <section id="aboutp"><About/></section>
       <section id="experiencep"><Experience/></section>
       <section id="projectsp"><Projects/></section>
-      <section id="contactsp"></section>
+      <section id="contactsp"><Contact/></section>
     </div>
   )
 }

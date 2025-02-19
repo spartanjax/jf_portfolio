@@ -27,7 +27,7 @@ let schoolIconStyles = {background: "#f9c74f"}
                   iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
                   icon={isWorkIcon ? <img src={work} alt="work" className="icon"/> : <img src={school} alt="school" className="icon"/>}
                   >
-                    <h3 className="vertical-timeline-element-title">{element.title}</h3>
+                    <h3 className="vertical-timeline-element-title">{element.title} - <u><a href={element.company_link}>{element.company}</a></u></h3>
                     <h5 className="vertical-timeline-element-subtitle">{element.location}</h5>
                     <p id="description">{element.description}</p>
                   </VerticalTimelineElement>
