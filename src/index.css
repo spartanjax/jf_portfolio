@@ -8,6 +8,10 @@ Dark Blue: #2D336B */
 
 :root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #7886C7; --quaternary: #FFF2F2;}
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 body {
     background-image: linear-gradient(var(--quaternary), var(--primary));
 }
@@ -29,25 +33,6 @@ a{
 .container{
     padding-left: 3%;
     padding-right: 3%;
-}
-
-.navBut {
-    font-size: 22px;
-    border: 0;
-    outline: 0;
-    background: 0;
-    cursor: pointer;
-    letter-spacing: 1.5px;
-    transition: all .25s;
-}
-
-.navBut:hover{
-    color: dimgrey;
-    letter-spacing: 4px;
-}
-
-.navBut.dark.active{
-    color: black;
 }
 
 

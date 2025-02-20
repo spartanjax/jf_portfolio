@@ -44,16 +44,17 @@ const App = () => {
     Popup.forEach((hidden) => observer.observe(hidden));
   }
  
-  window.addEventListener('load', show);
+window.addEventListener('load', show);
 
   return (
-    <div>
+    <div className="portfolio">
       <Overlay/>
-      <section id="homep"><Navbar/><Hero/></section>
-      <section id="aboutp"><About/></section>
-      <section id="experiencep"><Experience/></section>
-      <section id="projectsp"><Projects/></section>
-      <section id="contactsp"><Contact/></section>
+      <Navbar/>
+      <Hero/>
+      <About/>
+      <Experience/>
+      <Projects/>
+      <Contact/>
     </div>
   )
 }

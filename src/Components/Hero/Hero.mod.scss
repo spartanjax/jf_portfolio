@@ -1,7 +1,11 @@
+@import '../../assets/mixins';
+
 :root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #c51490; --quaternary: #FFF2F2; --grey: #123456;}
 
+
 .hero-container{
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
     min-height: 100vh;
     /* background-image: linear-gradient(white, gray); */
     align-items: center;
@@ -11,8 +15,16 @@
 }
 
 .hero-image{
-    width: 400px;
+    width: 300px;
     margin-top: -20px;
+
+    @include breakpoint(small){
+        width: 200px;
+    }
+
+    @include breakpoint(xlarge){
+        width: 450px;
+    }
 }
  
 .hero-image img {
@@ -26,7 +38,10 @@
     /* background-color: red; */
     text-align: left;
     max-width: 800px;
-    margin-left: 100px;
+    margin-left: 5%;
+
+    
+    
 }
 
 .hero-text h1{

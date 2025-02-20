@@ -1,3 +1,5 @@
+@import '../../assets/mixins'; 
+
 :root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #c51490; --quaternary: #FFF2F2; --grey: #123456;}
 
 nav {
@@ -20,8 +22,6 @@ nav {
 nav ul li {
     list-style: none;
     display: inline-block;
-    margin: 5px 20px;
-    font-size: 20px;
 }
 
 nav ul li a:hover {
@@ -29,10 +29,46 @@ nav ul li a:hover {
     color: var(--secondary);
 }
 
+.navBut {
+    font-size: 18px;
+    border: 0;
+    outline: 0;
+    background: 0;
+    cursor: pointer;
+    letter-spacing: 1.5px;
+    transition: all .25s;
+    margin: 5px 20px;
+    color: var(--primary);
+
+    @include breakpoint(large){
+        margin: 5px 40px;
+    }
+
+    @include breakpoint(medium){
+        font-size: 22px;
+    }
+
+    @include breakpoint(small){
+        font-size: 17px;
+        margin: 5px 10px;
+    }
+}
+
+.navBut:hover{
+    letter-spacing: 4px;
+
+    @include breakpoint(small){
+        letter-spacing: 2.5px;
+    }
+}
+
+.navBut.dark.active{
+    color: black;
+}
+
 .dark-nav{
     top: 0;
     background-color: var(--primary);
-    border-bottom: 1px black solid;
 }
 
 .dark-nav ul li a{

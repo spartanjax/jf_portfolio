@@ -1,5 +1,5 @@
 import React from 'react'
-import './experience.css'
+import './experience.mod.scss'
 import Section from '../Section/section'
 import work from '../../assets/icons/work.png'
 import school from '../../assets/icons/school.png'
@@ -27,7 +27,7 @@ let schoolIconStyles = {background: "#f9c74f"}
                   iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
                   icon={isWorkIcon ? <img src={work} alt="work" className="icon"/> : <img src={school} alt="school" className="icon"/>}
                   >
-                    <h3 className="vertical-timeline-element-title">{element.title} - <u><a href={element.company_link}>{element.company}</a></u></h3>
+                    <h3 className="vertical-timeline-element-title">{element.title} - <u><a href={element.company_link} target="_blank">{element.company}</a></u></h3>
                     <h5 className="vertical-timeline-element-subtitle">{element.location}</h5>
                     <p id="description">{element.description}</p>
                   </VerticalTimelineElement>
