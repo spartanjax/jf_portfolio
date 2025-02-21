@@ -2,20 +2,31 @@
 
 :root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #c51490; --quaternary: #FFF2F2; --grey: #123456;}
 
-.project_container {
+.project {
+    background-color: var(--quaternary);
+}
+
+.spacing_container{
+    width: 80%;
+    margin-left: 10%;
+
+    @include breakpoint(small) {
+        width: 70%;
+        margin-left: 15%;
+     }
+}
+
+.project_grid {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     margin-top: 2rem;
     margin-bottom: 5rem;
     gap: 1rem;
 
-    // @include breakpoint(medium) {
-    //     grid-template-columns: repeat(3, 1fr);
-    //  }
+    @include breakpoint(large) {
+       grid-template-columns: repeat(3, 1fr);
+    }
 }
 
-.project {
-    background-color: var(--quaternary);
 
-}

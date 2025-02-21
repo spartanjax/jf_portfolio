@@ -1,16 +1,25 @@
 let projects = [
     {
         key: 1,
-        tester: "test",
+        title: "Sign Database",
+        cover_img: "",
+        blurb: "Database for sign company",
+        skills: "",
     },
     {
         key: 2,
-        tester: "test",
+        title: "Filler",
+        cover_img: "",
+        blurb: "filler text",
+        skills: "",
     },
     {
         key: 3,
-        tester: "test",
-    }
+        title: "Filler",
+        cover_img: "",
+        blurb: "filler text",
+        skills: "",
+    },
 ];
 
 
