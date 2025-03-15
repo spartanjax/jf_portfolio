@@ -6,8 +6,7 @@ import Section from '../Section/section'
 const contact = () => {
   return (
     <div className = "contact">
-        <Section title ="Contact Me">
-        </Section>
+        <p>For any inquiries, please email me at <b>jacksonqfontaine@gmail.com</b>.</p>
     </div>
   )
 }
