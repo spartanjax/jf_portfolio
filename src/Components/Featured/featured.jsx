@@ -21,11 +21,11 @@ const featured = ({ proj }) => {
 
   return (
     <div className="proj_container">
+      <a href={proj.project_link} target="_blank" rel="noopener noreferrer">
       <div className = "featured">
       <div className="img_container">
           <img
             src={images[currentIndex]}
-            alt="featured project"
             className={fade ? "fade-in" : "fade-out"}
           />
         </div>
@@ -34,6 +34,7 @@ const featured = ({ proj }) => {
           <h3 className="blurb">{proj.blurb}<br/><b>Skills: </b>{proj.skills}</h3>
         </div>
       </div>
+      </a>
     </div>
   )
 }

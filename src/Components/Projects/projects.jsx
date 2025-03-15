@@ -26,12 +26,14 @@ export default Projects;
 
 
 const Project = ({project}) => (
-  <a href = {project.link} className="proj_container">
-    <div className="project" id = {project.key}>
-      <h1>{project.title}</h1>
-      <h3 className="blurb">{project.blurb}</h3>
-      <h3 className="skills"><b>Skills: </b>{project.skills}</h3>
-      <img src={"/images/"+project.project_cover} alt="" />
-    </div>
-  </a>
+  <div className="proj_container">
+    <a href = {project.project_link} target="_blank" rel="noopener noreferrer">
+      <div className="project" id = {project.key}>
+        <h1>{project.title}</h1>
+        <h3 className="blurb">{project.blurb}</h3>
+        <h3 className="skills"><b>Skills: </b>{project.skills}</h3>
+        <img src={"/images/1.png"} alt=""/>
+      </div>
+    </a>
+  </div>
 );
