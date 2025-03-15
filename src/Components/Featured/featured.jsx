@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import '../Featured/featured.mod.scss';
 import proj from "../../assets/featured_proj";
+import one from "/images/1.png";
+import two from "/images/2.png";  
+import three from "/images/3.png";
+import four from "/images/4.png";
+
+const scroll_speed = 5;
 
 const featured = ({ proj }) => {
-  const images = [
-    "/images/1.png",
-    "/images/2.png",
-    "/images/3.png",
-    "/images/4.png"
-  ];
+  const images = [one, two, three, four];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -18,8 +19,8 @@ const featured = ({ proj }) => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
         setFade(true); // Fade in new image
-      }, 400); // Match transition duration
-    }, 3000); 
+      }, 500); // Match transition duration
+    }, scroll_speed*1000); 
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);

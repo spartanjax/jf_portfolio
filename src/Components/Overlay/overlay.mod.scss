@@ -1,9 +1,15 @@
+@use '../../assets/mixins' as *;
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
 :root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #7886C7; --quaternary: #FFF2F2;}
 
 
 #overlay{
     position: fixed;
+
+    @include breakpoint(small) {
+        display: none;
+    }
 }
 
 .icon-links {

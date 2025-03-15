@@ -34,7 +34,7 @@ const Project = ({project}) => (
         <h1>{project.title}</h1>
         <h3 className="blurb">{project.blurb}</h3>
         <h3 className="skills"><b>Skills: </b>{project.skills}</h3>
-        <img src={"/images/"+project.project_cover} alt=""/>
+        <img src={project.project_cover} alt=""/>
       </div>
     </a>
   </div>
