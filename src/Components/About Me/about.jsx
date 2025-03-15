@@ -1,5 +1,5 @@
 import React from 'react'
-import './about.css'
+import './about.mod.scss'
 import Section from '../Section/section'
 
 const about = () => {

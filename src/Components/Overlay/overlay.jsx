@@ -1,5 +1,5 @@
 import React from 'react'
-import './overlay.css'
+import './overlay.mod.scss'
 import linkedin from '../../assets/icons/overlay/linkedin.png'
 import github from '../../assets/icons/overlay/github.png'
 import instagram from '../../assets/icons/overlay/instagram.png'
