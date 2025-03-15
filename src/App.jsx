@@ -25,26 +25,28 @@ const App = () => {
 
   componentDidMount();
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        // entry.target.classList.remove("show");
-      }
-    });
-  });
+//   const observer = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//       if (entry.isIntersecting) {
+//         entry.target.classList.add("show");
+//       }
+//     });
+//   }, {
+//     root: null, // Observe relative to viewport
+//     rootMargin: "0px",
+//     threshold: 0.1, // Trigger when at least 10% of the element is visible
+//   });
 
-  function show(){
-    const HiddenLeft = document.querySelectorAll('.hidden-left');
-    const HiddenRight = document.querySelectorAll('.hidden-right');
-    const Popup = document.querySelectorAll('.popup');
-    HiddenLeft.forEach((hidden) => observer.observe(hidden));
-    HiddenRight.forEach((hidden) => observer.observe(hidden));
-    Popup.forEach((hidden) => observer.observe(hidden));
-  }
+//   function show(){
+//     const HiddenLeft = document.querySelectorAll('.hidden-left');
+//     const HiddenRight = document.querySelectorAll('.hidden-right');
+//     const Popup = document.querySelectorAll('.popup');
+//     HiddenLeft.forEach((hidden) => observer.observe(hidden));
+//     HiddenRight.forEach((hidden) => observer.observe(hidden));
+//     Popup.forEach((hidden) => observer.observe(hidden));
+//   }
  
-window.addEventListener('load', show);
+// window.addEventListener('load', show);
 
   return (
     <div className="portfolio">

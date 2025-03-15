@@ -62,3 +62,7 @@ a{
     transform: translateX(0);
     scale: 1;
 }
+
+.show {
+    will-change: opacity, transform;
+  }

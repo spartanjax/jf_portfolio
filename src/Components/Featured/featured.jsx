@@ -3,7 +3,12 @@ import '../Featured/featured.mod.scss';
 import proj from "../../assets/featured_proj";
 
 const featured = ({ proj }) => {
-  const images = ["/images/1.png", "/images/2.png", "/images/3.png", "/images/4.png"];
+  const images = [
+    "/images/1.png",
+    "/images/2.png",
+    "/images/3.png",
+    "/images/4.png"
+  ];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
@@ -14,7 +19,7 @@ const featured = ({ proj }) => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
         setFade(true); // Fade in new image
       }, 400); // Match transition duration
-    }, 3000); // Change image every 2 seconds
+    }, 3000); 
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
