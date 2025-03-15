@@ -7,7 +7,6 @@ const contact = () => {
   return (
     <div className = "contact">
         <Section title ="Contact Me">
-            <p>test</p>
         </Section>
     </div>
   )

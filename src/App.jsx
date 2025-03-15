@@ -54,7 +54,7 @@ window.addEventListener('load', show);
       <About/>
       <Experience/>
       <Projects/>
-      <Contact/>
+      {/* <Contact/> */}
     </div>
   )
 }

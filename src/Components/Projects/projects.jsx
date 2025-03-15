@@ -3,7 +3,7 @@ import './projects.mod.scss'
 import Section from '../Section/section'
 import Featured from "../Featured/featured"
 import projects from "../../assets/projects"
-import featured_proj from "../../assets/featured_proj";
+import featured_proj from "../../assets/featured_proj.js";
 
 const Projects = () => {
   return (
@@ -26,10 +26,12 @@ export default Projects;
 
 
 const Project = ({project}) => (
-  <div className="">
+  <a href = {project.link} className="proj_container">
     <div className="project" id = {project.key}>
-      <h2>{project.title}</h2>
-      <h3>{project.blurb}</h3>
+      <h1>{project.title}</h1>
+      <h3 className="blurb">{project.blurb}</h3>
+      <h3 className="skills"><b>Skills: </b>{project.skills}</h3>
+      <img src={"/images/"+project.project_cover} alt="" />
     </div>
-  </div>
+  </a>
 );
