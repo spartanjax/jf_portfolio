@@ -25,11 +25,10 @@ const Hero = () => {
             <hr></hr>
             <h2>University of Auckland</h2>
             <h2>BSc in CS/Maths</h2>
-            <button className="btn">
-              <Link to="about" smooth={true} offset={-150} duration={500}>About Me</Link>
-            </button>
+            <a className="btn"><Link to="about" smooth={true} offset={-150} duration={500}>About Me</Link></a>
             <br/><br/>
-            <button className="btn" onClick={()=>download(CV)}>Resume</button>
+            <a className="btn" href={CV} target="_blank">Resume</a>
+            {/* onClick={()=>download(CV)} */}
         </div>
     </div>
   )

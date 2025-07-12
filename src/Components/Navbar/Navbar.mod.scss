@@ -17,6 +17,11 @@ nav {
 
 .logo {
     width: 60px;
+    opacity: 0%;
+}
+
+.logo .dark-nav{
+    opacity: 100%;
 }
 
 nav ul li {
@@ -37,11 +42,11 @@ nav ul li a:hover {
     cursor: pointer;
     letter-spacing: 1.5px;
     transition: all .25s;
-    margin: 5px 20px;
+    margin: 10px 20px;
     color: var(--primary);
 
     @include breakpoint(large){
-        margin: 5px 40px;
+        margin: 15px 40px;
     }
 
     @include breakpoint(medium){
@@ -50,7 +55,7 @@ nav ul li a:hover {
 
     @include breakpoint(small){
         font-size: 17px;
-        margin: 5px 10px;
+        margin: 15px 10px;
     }
 }
 

@@ -49,6 +49,10 @@
     font-weight: 300;
     line-height: 1;
     color: var(--primary);
+
+    @include breakpoint(small){
+        font-size: 35px;
+    }
 }
 
 .hero-text h2{
@@ -56,6 +60,10 @@
     font-weight: 300;
     color:  var(--secondary);
     line-height: 1.4; 
+
+    @include breakpoint(small){
+        font-size: 18px;
+    }
 }
 
 hr {
@@ -80,6 +88,7 @@ hr {
     margin-left: 0;
     transition: ease-in 0.5s;
     letter-spacing: 0.5px;
+    height: 28px;
 }
 
 .btn:hover{
