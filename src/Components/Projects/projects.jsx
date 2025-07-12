@@ -8,7 +8,7 @@ import FadeIn from "../FadeIn/FadeIn.jsx";
 
 const Projects = () => {
   return (
-    <div className="projects">
+    <div className="projects" id="projects">
         <Section title="Projects">
           <div className='spacing_container'>
             <Featured proj={featured_proj}/>

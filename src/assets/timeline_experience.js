@@ -1,11 +1,11 @@
 let timeline_experience = [
     {
         id: 4,
-        title: "Frontend Developer",
+        title: "Frontend Developer Intern",
         company: "Strive Digital",
         company_link: "https://strivedigital.co.nz/",
         location: "Christchurch, New Zealand",
-        description: "Working as a front-end and back-end developer at a web development company, focusing on building a team roster page with a strong emphasis on front-end development. Collaborated using Git and GitLab while integrating GraphQL and DatoCMS for backend functionality.",
+        description: "Working as a front-end developer at digital agency Strive Digital: mainly focusing on building a team roster page. Build solutions utilzing React and JS, collaborated using Git and GitLab while integrating GraphQL and DatoCMS for backend functionality.",
         date: "Jan 2025 - Present",
         icon: "work",
     },

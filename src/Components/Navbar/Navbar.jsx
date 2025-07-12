@@ -1,36 +1,51 @@
 import React from 'react'
+import { useState } from 'react'
 import './Navbar.mod.scss'
 import logo from '../../assets/jf_logo.png'
 import { Link, Element } from 'react-scroll';
+import { scroller } from 'react-scroll';
 
 const Navbar = () => {
+  const [showArrow, setShowArrow] = useState(false);
+  const handleShow = () => setShowArrow(true);
+  const handleHide = () => setShowArrow(false);
+ 
+
   const [sticky, setSticky] = React.useState(false);
-  const Logo = document.getElementsByClassName("logo");
   React.useEffect(() => {
     window.addEventListener("scroll", () => {
       if (window.scrollY > 10) {
         setSticky(true);
+        handleShow();
       } else {
         setSticky(false);
-        
+        handleHide();
       }
     });
   }, []);
-  
+
+  const scrollToSection = (id, offset = 0) => {
+  console.log('test');
+  const el = document.getElementById(id);
+  if (el) {
+    const y = el.getBoundingClientRect().top + window.scrollY + offset;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+};
+
 
   return (
-    // <div className={'portfolio'}>
-    <nav className={`container`}>
-        {/* <Link to="hero-container" smooth={true} offset={-100} duration={500}>
-          <img src={logo} alt="JF Logo" className={`logo ${sticky? 'dark-nav' : ''}`}/>
-        </Link> */}
-        <ul>
-            <li><button id='about_but' className='navBut'><Link to="about" smooth={true} offset={-150} duration={800}>About</Link></button></li>
-            <li><button id='exp' className='navBut'><Link to="experience" smooth={true} offset={0} duration={800}>Experience</Link></button></li>
-            <li><button id='projects_but' className='navBut'><Link to="projects" smooth={true} offset={-50} duration={800}>Projects</Link></button></li>
-            {/* <li><button id='contact_but' className='navBut'><Link to="contact" smooth={true} offset={-100} duration={800}>Contact</Link></button></li> */}
-        </ul>
+    <>
+    <nav className={`container`} id='nav'>
+      {showArrow && <button id={`upArrow`} className='navBut' onClick={() => scrollToSection('nav', -100)}>↑</button>}
+      
+      <ul>
+          <li><button className='navBut' onClick={() => scrollToSection('about', -100)}>About</button></li>
+          <li><button className='navBut' onClick={() => scrollToSection('experience')}>Experience</button></li>
+          <li><button className='navBut' onClick={() => scrollToSection('projects', -50)}>Projects</button></li>            {/* <li><button id='contact_but' className='navBut'><Link to="contact" smooth={true} offset={-100} duration={800}>Contact</Link></button></li> */}
+      </ul>
     </nav>
+    </>
   )
 }
 

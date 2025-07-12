@@ -8,13 +8,17 @@ Dark Blue: #2D336B */
 
 :root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #7886C7; --quaternary: #FFF2F2;}
 
+.portfolio {
+  position: relative;
+  z-index: 10000;
+}
 
 /* Base Reset */
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 
 /* Static Animated Gradient (does NOT follow mouse) */
@@ -35,7 +39,7 @@ html, body {
 );
 
   background-size: 400% 400%;
-  animation: gradientShift 12s ease infinite;
+  animation: gradientShift 10s ease infinite;
   z-index: -100;
   pointer-events: none;
 }

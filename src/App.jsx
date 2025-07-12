@@ -29,10 +29,6 @@ const App = () => {
 
   return (
     <>
-      {/* Glowing Animated Background Layer */}
-      <div className="background-gradient" />
-      <div className="background-glow" />
-
       {/* Main Content */}
       <div className="portfolio">
         <Overlay />
@@ -43,6 +39,10 @@ const App = () => {
         <Projects />
         <Contact />
       </div>
+
+      {/* Glowing Animated Background Layer */}
+      <div className="background-gradient" />
+      <div className="background-glow" />
     </>
   );
 };

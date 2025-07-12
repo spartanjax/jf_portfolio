@@ -3,7 +3,7 @@ import portfolio_img from "/images/portfolio.png"
 
 let projects = [
     {
-        key: 1,
+        key: 2,
         title: "Sign Database",
         blurb: "Database for sign company",
         skills: "DotNet, C#, SQL",
@@ -11,7 +11,7 @@ let projects = [
         project_cover: sign_img
     },
     {
-        key: 2,
+        key: 1,
         title: "Porfolio Website",
         blurb: "You're looking at it!",
         skills: "React, JavaScript, SCSS",

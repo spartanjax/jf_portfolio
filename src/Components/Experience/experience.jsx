@@ -13,7 +13,7 @@ let workIconStyles = {background: "#06D6A0"}
 let schoolIconStyles = {background: "#f9c74f"}
 
   return (
-    <div className="experience">
+    <div className="experience" id='experience'>
         <Section title="Where I've Worked">
             <VerticalTimeline>
               {
