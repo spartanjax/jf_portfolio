@@ -19,10 +19,11 @@ const Navbar = () => {
   
 
   return (
-    <nav className={`container ${sticky? 'dark-nav' : ''}`}>
-        <Link to="hero-container" smooth={true} offset={-100} duration={500}>
+    // <div className={'portfolio'}>
+    <nav className={`container`}>
+        {/* <Link to="hero-container" smooth={true} offset={-100} duration={500}>
           <img src={logo} alt="JF Logo" className={`logo ${sticky? 'dark-nav' : ''}`}/>
-        </Link>
+        </Link> */}
         <ul>
             <li><button id='about_but' className='navBut'><Link to="about" smooth={true} offset={-150} duration={800}>About</Link></button></li>
             <li><button id='exp' className='navBut'><Link to="experience" smooth={true} offset={0} duration={800}>Experience</Link></button></li>

@@ -2,16 +2,13 @@
 
 
 .about {
-    background-color:var(--secondary);
+    background-color: #eeeff1;
     box-shadow: 0 0 4cqh rgba(0, 0, 0, 0.8);
-    /* width: 95%;
-    margin-left: 2.5%;
-    border-radius: 10px; */
 }
 
 
 .about h3 {
-    color: var(--grey);
+    color: black;
     font-size: 1rem;
     text-align: left;
     font-weight: 300;
@@ -30,7 +27,7 @@
 }
  
 .about #blurb p{
-    color: white;
+    color: var(--primary);
     font-size: 1rem;
     text-align: left;
     font-weight: 300;

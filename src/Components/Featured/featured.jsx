@@ -37,7 +37,7 @@ const featured = ({ proj }) => {
         </div>
         <div className="text_container">
           <h1>Featured Project: {proj.title}</h1>
-          <h3 className="blurb">{proj.blurb}<br/><b>Skills: </b>{proj.skills}</h3>
+          <h3 className="blurb">{proj.blurb}<br/><br/><b>Skills: </b>{proj.skills}</h3>
         </div>
       </div>
       </a>

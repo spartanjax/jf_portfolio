@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Overlay from './Components/Overlay/overlay';
 import Navbar from './Components/Navbar/Navbar';
 import Hero from './Components/Hero/Hero';
@@ -8,57 +8,43 @@ import Projects from './Components/Projects/projects';
 import Contact from "./Components/Contact/contact";
 
 const App = () => {
-
-//   White: 
-// Light Blue: rgb(169, 181, 223)
-// Blue: #7886C7  rgb(120, 134, 199)
-// Dark Blue: #2D336B rgb(45, 51, 107)
-
-  function componentDidMount() {
+  useEffect(() => {
     const root = document.documentElement;
     root.style.setProperty('--primary', 'rgb(45, 51, 107)');
-    root.style.setProperty('--secondary', 'rgb(120, 134, 199)');
+    root.style.setProperty('--secondary', 'rgb(81, 106, 214)');
     root.style.setProperty('--tertiary', 'rgb(169, 181, 223)');
     root.style.setProperty('--quaternary', 'rgb(240, 241, 252)');
     root.style.setProperty('--grey', 'rgb(66, 66, 66)');
-    }
 
-  componentDidMount();
+    const handleMouseMove = (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      root.style.setProperty('--x', `${x}%`);
+      root.style.setProperty('--y', `${y}%`);
+    };
 
-//   const observer = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//       if (entry.isIntersecting) {
-//         entry.target.classList.add("show");
-//       }
-//     });
-//   }, {
-//     root: null, // Observe relative to viewport
-//     rootMargin: "0px",
-//     threshold: 0.1, // Trigger when at least 10% of the element is visible
-//   });
-
-//   function show(){
-//     const HiddenLeft = document.querySelectorAll('.hidden-left');
-//     const HiddenRight = document.querySelectorAll('.hidden-right');
-//     const Popup = document.querySelectorAll('.popup');
-//     HiddenLeft.forEach((hidden) => observer.observe(hidden));
-//     HiddenRight.forEach((hidden) => observer.observe(hidden));
-//     Popup.forEach((hidden) => observer.observe(hidden));
-//   }
- 
-// window.addEventListener('load', show);
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   return (
-    <div className="portfolio">
-      <Overlay/>
-      <Navbar/>
-      <Hero/>
-      <About/>
-      <Experience/>
-      <Projects/>
-      <Contact/>
-    </div>
-  )
-}
+    <>
+      {/* Glowing Animated Background Layer */}
+      <div className="background-gradient" />
+      <div className="background-glow" />
 
-export default App
+      {/* Main Content */}
+      <div className="portfolio">
+        <Overlay />
+        <Navbar />
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Contact />
+      </div>
+    </>
+  );
+};
+
+export default App;

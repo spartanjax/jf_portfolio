@@ -8,13 +8,67 @@ Dark Blue: #2D336B */
 
 :root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #7886C7; --quaternary: #FFF2F2;}
 
+
+/* Base Reset */
 html, body {
-    max-width: 100%;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
 }
-body {
-    background-image: linear-gradient(var(--quaternary), var(--primary));
+
+/* Static Animated Gradient (does NOT follow mouse) */
+.background-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+  -45deg,
+  #e0f0ff,   /* very light blue */
+  #b3d1ff,   /* light blue */
+  #8ab8ff,   /* medium light blue */
+  #cce4ff,   /* very pale blue/white */
+  #8ab8ff,   /* medium light blue */
+  #b3d1ff,   /* light blue */
+);
+
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+  z-index: -100;
+  pointer-events: none;
 }
+
+/* Glowing Light that Follows Mouse */
+.background-glow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(0, 0, 0, 0.2),
+    transparent 90%
+  );
+  z-index: -99;
+  pointer-events: none;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
 
 *{
     font-family: "Tajawal", serif;

@@ -9,7 +9,7 @@ const about = () => {
     <div className="about">
         <Section title="Hi, I'm Jackson!" dark={true} id='about'>
           <FadeIn direction="right" delay={300}>
-            <h3>Student at the Unversity of Auckland | BSc in Mathematics and Computer Science</h3>
+            {/* <h3>Student at the Unversity of Auckland | BSc in Mathematics and Computer Science</h3> */}
           </FadeIn>
 
           <FadeIn direction="up" delay={400}>

@@ -34,14 +34,11 @@
 }
 
 .hero-text{
-    margin-top: -10vh;
+    margin-top: -3vh;
     /* background-color: red; */
     text-align: left;
     max-width: 800px;
     margin-left: 5%;
-
-    
-    
 }
 
 .hero-text h1{
@@ -60,6 +57,7 @@
     font-weight: 300;
     color:  var(--secondary);
     line-height: 1.4; 
+    margin-top: 15px;
 
     @include breakpoint(small){
         font-size: 18px;

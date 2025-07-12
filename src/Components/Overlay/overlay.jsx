@@ -10,10 +10,10 @@ const overlay = () => {
     <div id="overlay">
       <div className="icon-links">
         <ul>
-            <li><a href="https://www.linkedin.com/in/jackson-fontaine-a6aa15317/"><img src={linkedin} className="icon-logo"></img></a></li>
-            <li><a href="https://github.com/spartanjax"><img src={github} className="icon-logo"></img></a></li>
-            <li><a href="https://www.instagram.com/spartanjaxx/?hl=en"><img src={instagram} className="icon-logo"></img></a></li>
-            <li><a href="https://www.facebook.com/jackson.fontaine.923/"><img src={facebook} className="icon-logo"></img></a></li>
+            <li><a href="https://www.linkedin.com/in/jackson-fontaine-a6aa15317/" target="_blank"><img src={linkedin} className="icon-logo"></img></a></li>
+            <li><a href="https://github.com/spartanjax" target="_blank"><img src={github} className="icon-logo"></img></a></li>
+            <li><a href="https://www.instagram.com/spartanjaxx/?hl=en" target="_blank"><img src={instagram} className="icon-logo"></img></a></li>
+            <li><a href="https://www.facebook.com/jackson.fontaine.923/" target="_blank"><img src={facebook} className="icon-logo"></img></a></li>
             <div className="vertical-line1"/>
         </ul>
       </div>

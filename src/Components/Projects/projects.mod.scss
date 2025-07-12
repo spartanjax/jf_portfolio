@@ -1,13 +1,11 @@
 @use '../../assets/mixins' as *;
 
-:root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #c51490; --quaternary: #FFF2F2; --grey: #123456;}
-
 .proj_container{
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.1s ease-in-out;
 
     &:hover {
-        transform: translateY(-5px);
-        opacity: 0.6;
+        transform: translateY(-1px);
+        opacity: 0.9;
     }
 }
 
@@ -15,37 +13,52 @@
     position: relative;
     justify-content: space-between;
     background-color: var(--quaternary);
-    min-height: 150px;
+    min-height: 125px;
     padding: 1rem;
     border-radius: 10px;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); // Subtle shadow
 
+    @include breakpoint(medium) {
+       min-height: 170px;
+    }
+
+    @include breakpoint(large) {
+       min-height: 200px;
+    }
+
+    @include breakpoint(xlarge) {
+       min-height: 300px;
+    }
+
     h1 {
-        top: 10px;
+        top: 15px;
         position: absolute;
         z-index: 1;
         font-size: 1rem;
+        font-weight: 600;
         color: var(--primary);
         margin-left: -1rem;
         margin-top: -1.5rem;
     }
 
     .blurb{
-        top: 40px;
+        top: 45px;
         position: absolute;
         z-index: 1;
         margin-top: -1rem;
-        font-weight: 300;
+        font-weight: 400;
     }
 
     .skills{
         z-index: 1;
         position: absolute;
-        font-weight: 300;
+        font-weight: 500;
         bottom: 0;
     }
         
     img {
+        filter: blur(1px);
+        -webkit-filter: blur(1px);
         opacity: 0.6;
         position: absolute;
         z-index: 0;
@@ -78,26 +91,21 @@
 }
 
 .spacing_container{
-    width: 80%;
-    margin-left: 10%;
-
-    @include breakpoint(small) {
-        width: 70%;
-        margin-left: 15%;
-     }
+    width: 90%;
+    margin-left: 5%;
 }
 
 .project_grid {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     margin-top: 2rem;
     margin-bottom: 5rem;
     gap: 1rem;
 
-    // @include breakpoint(large) {
-    //    grid-template-columns: repeat(3, 1fr);
-    // }
+    @include breakpoint(large) {
+        grid-template-columns: repeat(2, 1fr);
+     }
 }
 
 

@@ -3,25 +3,15 @@
 :root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #c51490; --quaternary: #FFF2F2; --grey: #123456;}
 
 nav {
-    width: 100%;
-    padding: 5px 0;
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: fixed;
-    transition: 0.7s;
-    z-index: 1000;
-}
-
-.logo {
-    width: 60px;
-    opacity: 0%;
-}
-
-.logo .dark-nav{
-    opacity: 100%;
+  width: 80%; /* or your desired width */
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* or whatever you want inside */
+  margin-left: auto;  /* push nav to the right */
+  transition: 0.7s;
+  z-index: 1000;
+  justify-content: flex-end;
 }
 
 nav ul li {
@@ -31,7 +21,7 @@ nav ul li {
 
 nav ul li a:hover {
     text-decoration: none;
-    color: var(--secondary);
+    color: white;
 }
 
 .navBut {
@@ -44,19 +34,18 @@ nav ul li a:hover {
     transition: all .25s;
     margin: 10px 20px;
     color: var(--primary);
-
-    @include breakpoint(large){
-        margin: 15px 40px;
-    }
+    z-index: 100;
 
     @include breakpoint(medium){
-        font-size: 22px;
+        margin: 15px 40px;
+        font-size: 23px;
     }
 
-    @include breakpoint(small){
-        font-size: 17px;
-        margin: 15px 10px;
+    @include breakpoint(xlarge){
+        margin: 15px 40px;
+        font-size: 30px;
     }
+
 }
 
 .navBut:hover{
@@ -67,19 +56,3 @@ nav ul li a:hover {
     }
 }
 
-.navBut.dark.active{
-    color: black;
-}
-
-.dark-nav{
-    top: 0;
-    background-color: var(--primary);
-}
-
-.dark-nav ul li a{
-    color: white;
-}
-
-.dark-nav ul li a:hover{
-    color: var(--tertiary);
-}
