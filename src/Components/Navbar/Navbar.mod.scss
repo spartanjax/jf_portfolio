@@ -12,6 +12,9 @@ nav {
   transition: 0.7s;
   z-index: 1000;
   justify-content: flex-end;
+  position: fixed;
+  top: 5px;
+  right: 0;
 }
 
 nav ul li {
@@ -31,7 +34,7 @@ nav ul li {
 
 .navBut {
     position: relative;
-    font-size: 18px;
+    font-size: 23px;
     border: 0;
     outline: 0;
     background: 0;
@@ -43,16 +46,14 @@ nav ul li {
     z-index: 100;
     pointer-events: auto;
 
-    @include breakpoint(medium){
-        margin: 15px 30px;
-        font-size: 23px;
-    }
-
     @include breakpoint(xlarge){
         margin: 15px 40px;
         font-size: 30px;
     }
 
+    &.open {
+        color: var(--secondary);
+    }
 }
 
 .navBut:hover{
@@ -63,5 +64,73 @@ nav ul li {
     @include breakpoint(small){
         letter-spacing: 2.5px;
     }
+
+    &.open {
+        color: var(--primary);
+    }
 }
 
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  z-index: 10000;
+  position: fixed;
+  top: 25px;
+  right: 18px;
+
+  .visible {
+    display: flex;
+  }
+
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary);
+    transition: all 0.3s;
+  }
+
+  &.open .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  &.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  &.open .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+.nav-links {
+    box-shadow: 0 0 6cqh rgba(0, 0, 0, 0.8);
+    list-style: none;
+    display: none;
+    gap: 20px;
+    transition: max-height 0.5s ease;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    max-height: 1000px; /* default max height to show all */
+    z-index: 1000px;
+
+    &.collapsed {
+        flex-direction: column;
+        background-color: var(--quaternary);
+        max-height: 0;
+        transition: max-height 0.5s ease;
+    }
+
+    &.collapsed.open {
+        display: flex;
+        max-height: 500px; /* or enough to fit your items */
+    }
+
+    li {
+        margin: 10px 0;
+    }
+}

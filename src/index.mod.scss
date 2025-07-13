@@ -13,6 +13,11 @@ Dark Blue: #2D336B */
   z-index: 10000;
 }
 
+main {
+  margin-top: 0;
+  position: relative;
+}
+
 /* Base Reset */
 html, body {
   margin: 0;

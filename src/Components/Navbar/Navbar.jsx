@@ -9,20 +9,41 @@ const Navbar = () => {
   const [showArrow, setShowArrow] = useState(false);
   const handleShow = () => setShowArrow(true);
   const handleHide = () => setShowArrow(false);
- 
 
-  const [sticky, setSticky] = React.useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
+  const toggleMenu = () => setMenuOpen(prev => !prev);
+
+  const smallSize = 600;
+
   React.useEffect(() => {
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 10) {
-        setSticky(true);
+    const handleResize = () => {
+      setCollapsed(window.innerWidth < smallSize);
+    };
+
+    const handleScroll = () => {
+      if (window.scrollY > 150) {
+        setCollapsed(true);
         handleShow();
       } else {
-        setSticky(false);
+        setCollapsed(window.innerWidth < smallSize); // only collapse if width < 768
+        setMenuOpen(false);
         handleHide();
       }
-    });
+    };
+
+    // Initial check
+    handleResize();
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
+
 
   const scrollToSection = (id, offset = 0) => {
   console.log('test');
@@ -36,14 +57,34 @@ const Navbar = () => {
 
   return (
     <>
-    <nav className={`container`} id='nav'>
-      {showArrow && <button id={`upArrow`} className='navBut' onClick={() => scrollToSection('nav', -100)}>↑</button>}
-      
-      <ul>
+      <nav className={`container`} id="nav">
+      {collapsed ? (
+        <>
+          {/* Hamburger icon */}
+          <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu} style={{ display: collapsed ? 'flex' : 'none' }}>
+            <div className="bar"></div>
+            <div className="bar"></div>
+            <div className="bar"></div>
+          </div>
+          {menuOpen && (
+            <ul className={`nav-links ${collapsed ? 'collapsed' : ''} ${menuOpen ? 'open' : ''}`}>
+              <li><button className={`navBut ${menuOpen ? 'open' : ''}`} onClick={() => { toggleMenu(); scrollToSection('about', -100); }}>About</button></li>
+              <li><button className={`navBut ${menuOpen ? 'open' : ''}`} onClick={() => { toggleMenu(); scrollToSection('experience'); }}>Experience</button></li>
+              <li><button className={`navBut ${menuOpen ? 'open' : ''}`} onClick={() => { toggleMenu(); scrollToSection('projects', -50); }}>Projects</button></li>
+            </ul>
+          )}
+        </>
+      ) : (
+        <ul className="desktop-nav">
           <li><button className='navBut' onClick={() => scrollToSection('about', -100)}>About</button></li>
           <li><button className='navBut' onClick={() => scrollToSection('experience')}>Experience</button></li>
-          <li><button className='navBut' onClick={() => scrollToSection('projects', -50)}>Projects</button></li>            {/* <li><button id='contact_but' className='navBut'><Link to="contact" smooth={true} offset={-100} duration={800}>Contact</Link></button></li> */}
-      </ul>
+          <li><button className='navBut' onClick={() => scrollToSection('projects', -50)}>Projects</button></li>
+        </ul>
+      )}
+
+      {showArrow && (
+        <button id="upArrow" className="navBut" onClick={() => scrollToSection('hero')}>↑</button>
+      )}
     </nav>
     </>
   )

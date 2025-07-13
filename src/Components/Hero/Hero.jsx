@@ -15,7 +15,7 @@ const Hero = () => {
   }
   
   return (
-    <div className='hero-container'>
+    <div className='hero-container' id='hero'>
       <div className='hero-image'>
         <img className="" src={heroImg} alt="heroImg" />
       </div>
