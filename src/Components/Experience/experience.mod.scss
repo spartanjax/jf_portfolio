@@ -1,3 +1,5 @@
+@use '../../assets/mixins' as *;
+
 :root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #c51490; --quaternary: #FFF2F2; --grey: #123456;}
 
 .experience {
@@ -21,6 +23,10 @@
     justify-content: center;
     width: 30px;
     margin: 10% auto;
+
+    @include breakpoint(experience){
+        margin-top: 14px;
+    }
 }
 
 .vertical-timeline-element-date{

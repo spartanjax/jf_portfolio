@@ -1,5 +1,4 @@
 @use '../../assets/mixins' as *;
-:root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #c51490; --quaternary: #FFF2F2; --grey: #123456;}
 
 .proj_container{
     transition: transform 0.2s ease-in-out;
@@ -21,7 +20,7 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-      position: relative;
+      z-index: 100;
   
       img {
         border-radius: 10px;
@@ -32,7 +31,7 @@
           position: absolute;  // Ensure they are stacked
           top: 0;
           left: 0;
-          transition: opacity 1s ease-in-out;  // Smooth fade transition
+          transition: opacity 1.5s ease-in-out;  // Smooth fade transition
       }
   
       .fade-in {

@@ -18,7 +18,9 @@ const Navbar = () => {
 
   React.useEffect(() => {
     const handleResize = () => {
-      setCollapsed(window.innerWidth < smallSize);
+      if (window.scrollY < 150){
+        setCollapsed(window.innerWidth < smallSize);
+      }
     };
 
     const handleScroll = () => {

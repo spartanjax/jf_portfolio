@@ -1,6 +1,5 @@
 import React from 'react'
 import './Hero.mod.scss'
-import CV from '../../assets/jf_cv_2025.pdf'
 import heroImg from '../../assets/HeroPhoto/king.jpg'
 import { Link, Element } from 'react-scroll';
 
