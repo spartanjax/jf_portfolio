@@ -22,13 +22,35 @@ nav ul li {
     display: inline-block;
 }
 
-#upArrow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    font-size: 30px;
-    font-weight: 1000;
+/* Default state for the button */
+.upArrow {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1s ease; /* Smooth fade transition */
+  pointer-events: none; /* Prevent interaction when hidden */
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 30px;
+  font-weight: 1000;
+  cursor: pointer;
+  border: 0;
+  z-index: 100;
+  color: var(--primary);
+  background: none;
+
+
+  /* Visible state */
+  &.show {
+    opacity: 1;
+    pointer-events: auto; /* Enable interaction when visible */
+  }
 }
+
+.upArrow:hover {
+    color: var(--quaternary);
+}
+
+
 
 
 
@@ -78,11 +100,15 @@ nav ul li {
   gap: 4px;
   z-index: 10000;
   position: fixed;
-  top: 25px;
-  right: 18px;
+  top: 15px;
+  right: 0;
 
-  .visible {
+  &.visible {
     display: flex;
+  }
+
+  &.hidden {
+    display: none;
   }
 
   .bar {

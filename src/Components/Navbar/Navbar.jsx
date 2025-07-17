@@ -4,6 +4,8 @@ import './Navbar.mod.scss'
 import logo from '../../assets/jf_logo.png'
 import { Link, Element } from 'react-scroll';
 import { scroller } from 'react-scroll';
+import FadeIn from '../FadeIn/FadeIn';
+import FadeOut from '../FadeOut/FadeOut';
 
 const Navbar = () => {
   const [showArrow, setShowArrow] = useState(false);
@@ -34,7 +36,6 @@ const Navbar = () => {
       }
     };
 
-    // Initial check
     handleResize();
 
     window.addEventListener('resize', handleResize);
@@ -47,14 +48,38 @@ const Navbar = () => {
   }, []);
 
 
-  const scrollToSection = (id, offset = 0) => {
-  console.log('test');
-  const el = document.getElementById(id);
-  if (el) {
-    const y = el.getBoundingClientRect().top + window.scrollY + offset;
-    window.scrollTo({ top: y, behavior: 'smooth' });
-  }
-};
+  const scrollToSection = (id, offset = 0, duration = 1000) => {
+    console.log('test');
+    
+    const el = document.getElementById(id);
+    if (el) {
+      const targetY = el.getBoundingClientRect().top + window.scrollY + offset;
+      const startY = window.scrollY;
+      const distance = targetY - startY;
+      const startTime = performance.now();
+
+      const easeOutCubic = (t) => {
+        return 1 - Math.pow(1 - t, 3); // Easing function for smoother scrolling
+      };
+
+      const scroll = (currentTime) => {
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1); // Limit progress to 100%
+
+        const easingProgress = easeOutCubic(progress);
+        const currentScrollY = startY + distance * easingProgress;
+
+        window.scrollTo(0, currentScrollY);
+
+        if (timeElapsed < duration) {
+          requestAnimationFrame(scroll); // Continue scrolling if duration is not reached
+        }
+      };
+
+      requestAnimationFrame(scroll); // Start the scrolling animation
+    }
+  };
+
 
 
   return (
@@ -63,11 +88,17 @@ const Navbar = () => {
       {collapsed ? (
         <>
           {/* Hamburger icon */}
-          <div className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={toggleMenu} style={{ display: collapsed ? 'flex' : 'none' }}>
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-          </div>
+
+          <FadeIn direction="left" delay={0}>
+            <div
+  className={`hamburger ${menuOpen ? 'open' : ''} ${collapsed ? 'visible' : 'hidden'}`}
+  onClick={toggleMenu}
+>
+              <div className="bar"></div>
+              <div className="bar"></div>
+              <div className="bar"></div>
+            </div>
+          </FadeIn>
           {menuOpen && (
             <ul className={`nav-links ${collapsed ? 'collapsed' : ''} ${menuOpen ? 'open' : ''}`}>
               <li><button className={`navBut ${menuOpen ? 'open' : ''}`} onClick={() => { toggleMenu(); scrollToSection('about', -100); }}>About</button></li>
@@ -77,16 +108,18 @@ const Navbar = () => {
           )}
         </>
       ) : (
-        <ul className="desktop-nav">
-          <li><button className='navBut' onClick={() => scrollToSection('about', -100)}>About</button></li>
-          <li><button className='navBut' onClick={() => scrollToSection('experience')}>Experience</button></li>
-          <li><button className='navBut' onClick={() => scrollToSection('projects', -50)}>Projects</button></li>
-        </ul>
+        <FadeIn direction="right" delay={50}>
+            <FadeOut direction="right" delay={0}>
+            <ul className="desktop-nav">
+              <li><button className='navBut' onClick={() => scrollToSection('about', -100)}>About</button></li>
+              <li><button className='navBut' onClick={() => scrollToSection('experience')}>Experience</button></li>
+              <li><button className='navBut' onClick={() => scrollToSection('projects', -50)}>Projects</button></li>
+            </ul>
+          </FadeOut>
+        </FadeIn>
       )}
 
-      {showArrow && (
-        <button id="upArrow" className="navBut" onClick={() => scrollToSection('hero')}>↑</button>
-      )}
+      <button className={`upArrow ${showArrow ? 'show' : ''}`} onClick={() => scrollToSection('hero')}>↑</button>
     </nav>
     </>
   )
