@@ -8,7 +8,7 @@ import four from "/images/4.png";
 
 const scroll_speed = 5;
 
-const featured = ({ proj }) => {
+const featured = ({proj}) => {
   const images = [one, two, three, four];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [fade, setFade] = useState(true);
@@ -35,8 +35,13 @@ const featured = ({ proj }) => {
               className={fade ? "fade-in" : "fade-out"}/>
         </div>
         <div className="text_container">
-          <h1>Featured Project: {proj.title}</h1>
-          <h3 className="blurb">{proj.blurb}<br/><br/><b>Skills: </b>{proj.skills}</h3>
+          <h1>Featured Project: <b>{proj.title}</b></h1>
+          <h3 className="blurb">{proj.blurb}</h3>
+          <div className="skills_feat">
+            {proj.skills.map((skill) =>(
+            <div className="skill" key={skill}>{skill}</div>
+            ))}
+          </div>
         </div>
       </div>
       </a>

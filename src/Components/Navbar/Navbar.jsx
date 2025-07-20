@@ -1,9 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import './Navbar.mod.scss'
-import logo from '../../assets/jf_logo.png'
-import { Link, Element } from 'react-scroll';
-import { scroller } from 'react-scroll';
+import FadeIn from '../FadeIn/FadeIn';
 
 const Navbar = () => {
   const [showArrow, setShowArrow] = useState(false);
@@ -57,6 +55,8 @@ const Navbar = () => {
 };
 
 
+
+
   return (
     <>
       <nav className={`container`} id="nav">
@@ -83,10 +83,7 @@ const Navbar = () => {
           <li><button className='navBut' onClick={() => scrollToSection('projects', -50)}>Projects</button></li>
         </ul>
       )}
-
-      {showArrow && (
-        <button id="upArrow" className="navBut" onClick={() => scrollToSection('hero')}>↑</button>
-      )}
+      <button className={`upArrow ${showArrow ? 'show' : ''}`} onClick={() => scrollToSection('hero')}>↑</button>
     </nav>
     </>
   )

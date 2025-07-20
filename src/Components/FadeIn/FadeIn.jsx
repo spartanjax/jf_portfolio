@@ -8,18 +8,22 @@ const FadeIn = ({ children, className = "", direction = "up", delay = 0 }) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
+        // Toggle visibility state every time the element enters or leaves the viewport
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Stop observing once visible
+          // observer.disconnect(); Makes so animation only occurs once
+        } else {
+          setIsVisible(false); 
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (ref.current) {
       observer.observe(ref.current);
     }
 
+    // Cleanup observer on component unmount
     return () => observer.disconnect();
   }, []);
 

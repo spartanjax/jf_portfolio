@@ -15,6 +15,7 @@
     height: 500px;
     width: 100%;
     border-radius: 10px;
+    margin-bottom: -22px;
 
     .img_container {
       width: 100%;
@@ -51,41 +52,42 @@
         bottom: 0;
         width: 100%;
         background-color: var(--quaternary);
-        opacity: 0.85;
+        opacity: 1;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
+        padding: 2px;
         
         h1{
-            margin-top: -10px;
-            font-size: 1.5rem;
-            font-weight: 600;
+          text-align: left;
+          margin-top: -10px;
+          font-size: 1rem;
+          font-weight: 500;
         }
         
         .blurb{
             margin-top: -1rem;
-            margin-left: 1.8rem;
+            margin-left: 1rem;
             font-weight: 500;
             margin-bottom: 10px;
-        }
-
-        
-
-        @include breakpoint(small){
-          h1{
-            font-size: 1.5rem;
-          }
-          h3{
             font-size: 0.8rem;
-          }
         }
+
+
         @include breakpoint(medium){
           h1{
             font-size: 1.5rem;
+          }
+
+          .blurb {
+            font-size: 1rem;
           }
         }
         @include breakpoint(large){
           h1{
             font-size: 2.5rem;
+          }
+          .blurb {
+            font-size: 1.3rem;
           }
         }
       }
@@ -95,4 +97,37 @@
       @include breakpoint(small){
         height: 300px;
       }
+}
+
+.skills_feat{
+  z-index: 100000;
+  font-weight: 500;
+  height: 30px;
+  margin-left: 10px;    
+  display: inline;
+}
+  
+.skill {
+  display: inline-block;   /* inline behavior */
+  background-color: var(--secondary); /* nice green background, adjust as you like */
+  color: white;            /* text color */
+  padding: 6px 12px;       /* some padding */
+  border-radius: 20px;     /* rounded edges */
+  font-size: 0.9rem;
+  font-weight: 500;
+  user-select: none;       /* optional: prevent text selection */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+  cursor: default;
+  margin: 0px 5px;
+  z-index: 100000;
+  align-items: right;
+
+  @include breakpoint(medium) {
+    font-size: 1.3rem;
+  }
+}
+
+.skill:hover {
+  background-color: var(--tertiary); 
 }
