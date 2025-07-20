@@ -87,16 +87,11 @@ const Navbar = () => {
         <>
           {/* Hamburger icon */}
 
-          <FadeIn direction="left" delay={0}>
-            <div
-  className={`hamburger ${menuOpen ? 'open' : ''} ${collapsed ? 'visible' : 'hidden'}`}
-  onClick={toggleMenu}
->
+            <div className={`hamburger ${menuOpen ? 'open' : ''} ${collapsed ? 'visible' : 'hidden'}`} onClick={toggleMenu}>
               <div className="bar"></div>
               <div className="bar"></div>
               <div className="bar"></div>
             </div>
-          </FadeIn>
           {menuOpen && (
             <ul className={`nav-links ${collapsed ? 'collapsed' : ''} ${menuOpen ? 'open' : ''}`}>
               <li><button className={`navBut ${menuOpen ? 'open' : ''}`} onClick={() => { toggleMenu(); scrollToSection('about', -100); }}>About</button></li>
@@ -106,15 +101,11 @@ const Navbar = () => {
           )}
         </>
       ) : (
-        <FadeIn direction="right" delay={50}>
-            <FadeOut direction="right" delay={0}>
-            <ul className="desktop-nav">
-              <li><button className='navBut' onClick={() => scrollToSection('about', -100)}>About</button></li>
-              <li><button className='navBut' onClick={() => scrollToSection('experience')}>Experience</button></li>
-              <li><button className='navBut' onClick={() => scrollToSection('projects', -50)}>Projects</button></li>
-            </ul>
-          </FadeOut>
-        </FadeIn>
+          <ul className="desktop-nav">
+            <li><button className='navBut' onClick={() => scrollToSection('about', -100)}>About</button></li>
+            <li><button className='navBut' onClick={() => scrollToSection('experience')}>Experience</button></li>
+            <li><button className='navBut' onClick={() => scrollToSection('projects', -50)}>Projects</button></li>
+          </ul>
       )}
       <button className={`upArrow ${showArrow ? 'show' : ''}`} onClick={() => scrollToSection('hero')}>↑</button>
     </nav>
