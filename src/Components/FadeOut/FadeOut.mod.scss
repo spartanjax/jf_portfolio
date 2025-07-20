@@ -1,0 +1,47 @@
+/* Default visible state */
+.fade-out {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 1.2s ease-out, transform 0.6s ease-out;
+}
+
+/* When the element is not visible (it has left the viewport), apply fade-out */
+.fade-out.hide {
+  opacity: 0;
+  transform: translateX(100%); /* Slide the element to the right */
+}
+
+/* For fading out to the left (when direction is 'left') */
+.fade-left {
+  transform: translateX(-20px); /* Start from off-screen left */
+}
+
+.fade-left.hide {
+  transform: translateX(-100%); /* Move off-screen to the left */
+}
+
+/* For fading out to the right (when direction is 'right') */
+.fade-right {
+  transform: translateX(20px); /* Start from off-screen right */
+}
+
+.fade-right.hide {
+  transform: translateX(100%); /* Move off-screen to the right */
+}
+
+/* Optional: Fading up or down */
+.fade-up {
+  transform: translateY(20px);
+}
+
+.fade-up.hide {
+  transform: translateY(-100%);
+}
+
+.fade-down {
+  transform: translateY(-20px);
+}
+
+.fade-down.hide {
+  transform: translateY(100%);
+}

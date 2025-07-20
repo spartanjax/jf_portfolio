@@ -11,12 +11,11 @@ const FadeIn = ({ children, className = "", direction = "up", delay = 0 }) => {
         // Toggle visibility state every time the element enters or leaves the viewport
         if (entry.isIntersecting) {
           setIsVisible(true);
-          // observer.disconnect(); Makes so animation only occurs once
         } else {
           setIsVisible(false); 
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
 
     if (ref.current) {

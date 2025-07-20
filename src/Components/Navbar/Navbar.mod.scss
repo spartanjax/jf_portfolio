@@ -43,7 +43,7 @@ nav ul li {
     opacity: 1;
     pointer-events: auto; /* Enable interaction when visible */
   }
-
+  
   @include breakpoint(medium) {
     font-size: 40px;
   }
