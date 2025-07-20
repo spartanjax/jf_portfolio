@@ -14,7 +14,7 @@ const Projects = () => {
             <Featured proj={featured_proj}/>
             <div className="project_grid">            
               {projects.map((proj) => (
-                <Project project={proj} key={proj.key}/>
+                <Project project={proj} key={proj.key} skills={proj.skills}/>
               ))}
             </div>
           </div>
@@ -26,17 +26,21 @@ const Projects = () => {
 export default Projects;
 
 
-const Project = ({project}) => (
+const Project = ({project, skills}) => (
   <FadeIn direction="up" delay={300}>
   <div className="proj_container">
-    <a href = {project.project_link} target="_blank" rel="noopener noreferrer">
-      <div className="project" id = {project.key}>
-        <h1>{project.title}</h1>
-        <h3 className="blurb">{project.blurb}</h3>
-        <h3 className="skills"><b>Skills: </b>{project.skills}</h3>
+    <div className="project" id = {project.key}>
+      <h1>{project.title}</h1>
+      <h3 className="blurb">{project.blurb}</h3>
+      <h3 className="skills">
+        {skills.map((skill) =>(
+          <div className="skill" key={skill}>{skill}</div>
+        ))}
+      </h3>
+      <a href = {project.project_link} target="_blank" rel="noopener noreferrer">
         <img src={project.project_cover} alt=""/>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
   </FadeIn>
 );

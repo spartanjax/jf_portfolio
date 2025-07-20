@@ -5,7 +5,7 @@
 
     &:hover {
         transform: translateY(-1px);
-        opacity: 0.9;
+        opacity: 0.95;
     }
 }
 
@@ -34,7 +34,7 @@
         top: 15px;
         position: absolute;
         z-index: 1;
-        font-size: 1rem;
+        font-size: 1.3rem;
         font-weight: 600;
         color: var(--primary);
         margin-left: -1rem;
@@ -46,16 +46,45 @@
         position: absolute;
         z-index: 1;
         margin-top: -1rem;
-        font-weight: 400;
+        font-weight: 500;
+        color: var(--primary);
     }
 
     .skills{
-        z-index: 1;
+        z-index: 100000;
         position: absolute;
         font-weight: 500;
-        bottom: 0;
+        bottom: 5px;
+        width: 100%;
+        left: 5px;
+        height: 30px;
     }
         
+    .skill {
+    display: inline-block;   /* inline behavior */
+    background-color: var(--secondary); /* nice green background, adjust as you like */
+    color: white;            /* text color */
+    padding: 6px 12px;       /* some padding */
+    border-radius: 20px;     /* rounded edges */
+    font-size: 0.9rem;
+    font-weight: 500;
+    user-select: none;       /* optional: prevent text selection */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+    cursor: default;
+    margin: 0px 5px;
+    z-index: 100000;
+    align-items: right;
+
+    @include breakpoint(large) {
+        font-size: 1.1rem;
+    }
+    }
+
+    .skill:hover {
+    background-color: var(--tertiary); 
+    }
+
     img {
         filter: blur(1px);
         -webkit-filter: blur(1px);
@@ -78,10 +107,10 @@
 
     @include breakpoint(small) {
         h1 {
-            font-size: 1rem;
+            font-size: 1.2rem;
         }
         .blurb{
-            top: 50px;
+            top: 43px;
         }
         h3{
             font-size: 0.8rem;
