@@ -1,7 +1,7 @@
-import React from 'react'
-import { useState } from 'react'
-import './Navbar.mod.scss'
-import FadeIn from '../FadeIn/FadeIn';
+import React from 'react';
+import { useState } from 'react';
+import './Navbar.mod.scss';
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
 const Navbar = () => {
   const [showArrow, setShowArrow] = useState(false);
@@ -102,6 +102,7 @@ const Navbar = () => {
         </>
       ) : (
           <ul className="desktop-nav">
+            <ThemeToggle />
             <li><button className='navBut' onClick={() => scrollToSection('about', -100)}>About</button></li>
             <li><button className='navBut' onClick={() => scrollToSection('experience')}>Experience</button></li>
             <li><button className='navBut' onClick={() => scrollToSection('projects', -50)}>Projects</button></li>
