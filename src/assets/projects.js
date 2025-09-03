@@ -5,7 +5,7 @@ import nb_img from "/images/nbml.png"
 let projects = [
     {
         key: 3,
-        title: "Income Predictor",
+        title: "Technology Guesser",
         blurb: "Naive bayes supervised ML model",
         skills: ["Python", "Jupyter", "SKLearn"],
         project_link: "https://github.com/spartanjax/nb_income",
