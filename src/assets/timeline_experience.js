@@ -5,8 +5,8 @@ let timeline_experience = [
         company: "Strive Digital",
         company_link: "https://strivedigital.co.nz/",
         location: "Christchurch, New Zealand",
-        description: "Working as a front-end developer at digital agency Strive Digital: mainly focusing on building a team roster page. Build solutions utilzing React and JS, collaborated using Git and GitLab while integrating GraphQL and DatoCMS for backend functionality.",
-        date: "Jan 2025 - Present",
+        description: "Working as a front-end developer at digital agency Strive Digital: mainly focused on building a team roster page. Built solutions utilzing React and JS, collaborated using Git and GitLab while integrating GraphQL and DatoCMS for backend functionality.",
+        date: "Jan 2025 - March 2025",
         icon: "work",
     },
     {
@@ -16,7 +16,7 @@ let timeline_experience = [
         company_link: "https://www.auckland.ac.nz/en/business/about-business-school/accounting-finance/current-students.html",
         location: "Auckland, New Zealand",
         description: "Served as a Teacher’s Assistant in the Computer Science Department, providing one-on-one guidance to students in lab sessions and offering feedback on weekly Python assignments.",
-        date: "July 2024 - Present",
+        date: "July 2024 - July 2025",
         icon: "work",
     },
     {

@@ -15,7 +15,7 @@ const about = () => {
             <div className='text_container'>
               <FadeIn direction="left" delay={400}>
                 <div id="blurb">
-                    <p><b>Hey there!</b> Thanks for stopping by. I'm Jackson, a problem solver at heart with a passion for coding, puzzles, and mathematics. Currently in my third year pursuing a Bachelor of Science in Computer Science and Mathematics at the University of Auckland. I'm particularly fascinated by predictive analytics, algorithmic optimzation, and complexity theory.</p>
+                    <p><b>Hey there!</b> Thanks for stopping by. I'm Jackson, a problem solver at heart with a passion for coding, puzzles, and mathematics. Currently, I'm in my penultimate year pursuing a Bachelor of Science in Computer Science and Mathematics at the University of Auckland. I'm particularly fascinated by machine learning, algorithmic optimzation, and multivariable calculus.</p>
                     <p id="second_p">Outside of tech, you'll often find me on the ice, playing hockey — a sport I’ve loved for years. I also enjoy staying active through the gym and running. I value spending quality time with friends and family, whether it's a casual hangout or an exciting adventure.</p>
                 </div>
               </FadeIn>
