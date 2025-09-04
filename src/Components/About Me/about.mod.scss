@@ -1,7 +1,7 @@
 @use '../../assets/mixins' as *;
 
 .about {
-    background-color: #eeeff1;
+    background-color: var(--quaternary);
     box-shadow: 0 0 4cqh rgba(0, 0, 0, 0.8);
 }
 
@@ -20,7 +20,6 @@
     align-items: center;   // vertical centering
     justify-content: center;    
     
-
     .photo {
         max-width: 100%;
         max-height: 220px;
@@ -44,6 +43,7 @@
     }
 
     .text_container {
+        margin-top: 20px;
         width: 60%;
     }
 
@@ -96,7 +96,7 @@
     width: fit-content;
     width: 60%;
     margin-left: 20%;
-    margin-top: 0px;
+    margin-top: 10px;
     margin-bottom: 20px;
     display: flex;
     justify-content: center; // or 'flex-start', etc.

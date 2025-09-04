@@ -86,7 +86,7 @@ const Navbar = () => {
       {collapsed ? (
         <>
           {/* Hamburger icon */}
-
+            <div className={`themeButtonMobile ${!showArrow ? 'show' : ''}`}><ThemeToggle /></div>
             <div className={`hamburger ${menuOpen ? 'open' : ''} ${collapsed ? 'visible' : 'hidden'}`} onClick={toggleMenu}>
               <div className="bar"></div>
               <div className="bar"></div>
@@ -101,12 +101,14 @@ const Navbar = () => {
           )}
         </>
       ) : (
-          <ul className="desktop-nav">
-            <ThemeToggle />
-            <li><button className='navBut' onClick={() => scrollToSection('about', -100)}>About</button></li>
-            <li><button className='navBut' onClick={() => scrollToSection('experience')}>Experience</button></li>
-            <li><button className='navBut' onClick={() => scrollToSection('projects', -50)}>Projects</button></li>
-          </ul>
+          <div className='wrapper'>
+            <div className="themeButton"><ThemeToggle /></div>
+            <ul className="desktop-nav">
+              <li><button className='navBut' onClick={() => scrollToSection('about', -100)}>About</button></li>
+              <li><button className='navBut' onClick={() => scrollToSection('experience')}>Experience</button></li>
+              <li><button className='navBut' onClick={() => scrollToSection('projects', -50)}>Projects</button></li>
+            </ul>
+          </div>
       )}
       <button className={`upArrow ${showArrow ? 'show' : ''}`} onClick={() => scrollToSection('hero')}>↑</button>
     </nav>

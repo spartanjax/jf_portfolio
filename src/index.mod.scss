@@ -8,17 +8,35 @@ Dark Blue: #2D336B */
 
 :root {
   /* Light mode */
-  --primary: #2D336B;
-  --secondary: #A9B5DF;
-  --tertiary: #7886C7;
-  --quaternary: #FFF2F2;
+  --primary: #2D336B;         /* Deep blue */
+  --primary-light: #5058A4;   /* Softer blue */
+  --secondary: #A9B5DF;       /* Muted lavender-blue */
+  --secondary-light: #C7D0EB; /* Pale lavender */
+  --tertiary: #7886C7;        /* Medium blue-purple */
+  --tertiary-dark: #5D68A5;   /* Deeper purple-blue */
+  --quaternary: #FFF2F2;      /* Very soft pink */
+  --quaternary-dark: #F5DADA; /* Warm neutral */
+
+  /* Neutral grays (useful in between accents) */
+  --neutral-light: #E6E6F0;
+  --neutral-mid: #B0B0C0;
+  --neutral-dark: #4A4A5A;
 }
 
 :root[data-theme="dark"] {
-  --primary: #A9B5DF;     /* Swap values */
+  --primary: #A9B5DF;          /* Swap values */
+  --primary-light: #e5e4e4;
   --secondary: #2D336B;
+  --secondary-light: #1F244E;
   --tertiary: #4A4A6A;
+  --tertiary-dark: #6C6C8A;
   --quaternary: #1A1A1A;
+  --quaternary-dark: #2A2A2A;
+
+  /* Neutral grays for dark mode */
+  --neutral-light: #d6d6de;
+  --neutral-mid: #606070;
+  --neutral-dark: #101010;
 }
 
 
@@ -50,12 +68,12 @@ html, body {
   height: 100%;
   background: linear-gradient(
   -45deg,
-  #e0f0ff,   /* very light blue */
-  #b3d1ff,   /* light blue */
-  #8ab8ff,   /* medium light blue */
-  #cce4ff,   /* very pale blue/white */
-  #8ab8ff,   /* medium light blue */
-  #b3d1ff,   /* light blue */
+  var(--quaternary),       /* very pale */
+  var(--secondary-light),  /* light/pale */
+  var(--tertiary),         /* medium */
+  var(--secondary),    /* deeper */
+  var(--tertiary),         /* medium */
+  var(--secondary-light)   /* light blue */
 );
 
   background-size: 400% 400%;

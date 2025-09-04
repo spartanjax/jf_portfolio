@@ -34,7 +34,9 @@ const Project = ({project, skills}) => (
       <h3 className="blurb">{project.blurb}</h3>
       <h3 className="skills">
         {skills.map((skill) =>(
-          <div className="skill" key={skill}>{skill}</div>
+          <div className="skill" key={skill}>
+            <div className='skillText'>{skill}</div>
+          </div>
         ))}
       </h3>
       <a href = {project.project_link} target="_blank" rel="noopener noreferrer">

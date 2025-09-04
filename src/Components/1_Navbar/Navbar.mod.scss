@@ -1,20 +1,39 @@
 @use '../../assets/mixins' as *;
 
-:root {--primary: #2D336B; --secondary: #A9B5DF; --tertiary: #c51490; --quaternary: #FFF2F2; --grey: #123456;}
+.themeButtonMobile {
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;   
+  top: 20px;
+  left: 15px;        
+  z-index: 1100;     
+  transition: opacity 0.2s ease; 
+
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto; 
+  }
+}
+
+.themeButton {
+  position: fixed;   
+  top: 20px;
+  left: 15px;        
+  z-index: 1100;    
+}
 
 nav {
-  width: 80%; /* or your desired width */
+  position: fixed;
+  top: 10px;
+  right: 0;
+  left: auto;         
+  width: max-content;      
   padding: 5px 0;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* or whatever you want inside */
-  margin-left: auto;  /* push nav to the right */
-  transition: 0.7s;
-  z-index: 1000;
   justify-content: flex-end;
-  position: fixed;
-  top: 5px;
-  right: 0;
+  z-index: 1000;          
 }
 
 nav ul li {
@@ -23,9 +42,9 @@ nav ul li {
 }
 
 .upArrow {
-  opacity: 0; /* Initially hidden */
-  transition: opacity 0.5s ease; /* Smooth fade transition */
-  pointer-events: none; /* Prevent interaction when hidden */
+  opacity: 0; 
+  transition: opacity 0.2s ease;
+  pointer-events: none; 
   position: fixed;
   top: 10px;
   left: 15px;
@@ -93,7 +112,7 @@ nav ul li {
 
 
 .hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
   cursor: pointer;
   gap: 4px;
@@ -102,19 +121,26 @@ nav ul li {
   top: 22px;
   right: 22px;
 
-  &.visible {
-    display: flex;
-  }
-
-  &.hidden {
-    display: none;
-  }
-
   .bar {
     width: 30px;
     height: 4px;
     background-color: var(--primary);
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+  }
+
+  &:hover .bar:nth-child(1) {
+    background-color: var(--tertiary-dark);
+    transform: translateX(-2px); // move top bar slightly left
+  }
+
+  &:hover .bar:nth-child(2) {
+    background-color: var(--tertiary-dark);
+    transform: translateX(0); // middle bar stays
+  }
+
+  &:hover .bar:nth-child(3) {
+    background-color: var(--tertiary-dark);
+    transform: translateX(2px); // move bottom bar slightly right
   }
 
   &.open .bar:nth-child(1) {
@@ -127,6 +153,7 @@ nav ul li {
     transform: rotate(-45deg) translate(5px, -6px);
   }
 }
+
 
 .nav-links {
     box-shadow: 0 0 6cqh rgba(0, 0, 0, 0.8);

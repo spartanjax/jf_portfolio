@@ -1,20 +1,48 @@
-import React from 'react'
-import './overlay.mod.scss'
-import linkedin from '../../assets/icons/overlay/linkedin.png'
-import github from '../../assets/icons/overlay/github.png'
-import instagram from '../../assets/icons/overlay/instagram.png'
-import facebook from '../../assets/icons/overlay/facebook.png'
+import React from 'react';
+import './overlay.mod.scss';
 
-const overlay = () => {
+const Overlay = () => {
   return (
     <div id="overlay">
       <div className="icon-links">
         <ul>
-            <li><a href="https://www.linkedin.com/in/jackson-fontaine-a6aa15317/" target="_blank"><img src={linkedin} className="icon-logo"></img></a></li>
-            <li><a href="https://github.com/spartanjax" target="_blank"><img src={github} className="icon-logo"></img></a></li>
-            <li><a href="https://www.instagram.com/spartanjaxx/?hl=en" target="_blank"><img src={instagram} className="icon-logo"></img></a></li>
-            <li><a href="https://www.facebook.com/jackson.fontaine.923/" target="_blank"><img src={facebook} className="icon-logo"></img></a></li>
-            <div className="vertical-line1"/>
+          {/* LinkedIn */}
+          <li>
+            <a href="https://www.linkedin.com/in/jackson-fontaine-a6aa15317/" target="_blank" rel="noreferrer">
+              <svg className="icon-logo" viewBox="0 0 24 24" fill="var(--primary-light)" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6C1.12 6 0 4.88 0 3.5C0 2.12 1.12 1 2.5 1C3.87 1 4.98 2.12 4.98 3.5ZM0 8H5V24H0V8ZM7.5 8H12V10H12.07C12.78 9 14.37 8 16.5 8C21 8 22 11 22 16V24H17V16C17 14.5 16.5 13 14.5 13C12.5 13 12 14.5 12 16V24H7.5V8Z"/>
+              </svg>
+            </a>
+          </li>
+
+          {/* GitHub */}
+          <li>
+            <a href="https://github.com/spartanjax" target="_blank" rel="noreferrer">
+              <svg id="git" className="icon-logo" viewBox="0 0 24 24" fill="var(--primary-light)" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.577v-2.234c-3.338.724-4.033-1.61-4.033-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.084 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.774.418-1.305.762-1.605-2.665-.3-5.466-1.333-5.466-5.93 0-1.31.468-2.382 1.236-3.222-.124-.303-.536-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 013-.403c1.02.005 2.044.138 3 .403 2.29-1.552 3.296-1.23 3.296-1.23.655 1.653.243 2.873.12 3.176.77.84 1.235 1.912 1.235 3.222 0 4.61-2.805 5.625-5.475 5.922.43.37.823 1.1.823 2.22v3.293c0 .32.216.694.825.576C20.565 21.796 24 17.296 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+          </li>
+
+          {/* Instagram */}
+          <li>
+            <a href="https://www.instagram.com/spartanjaxx/?hl=en" target="_blank" rel="noreferrer">
+              <svg className="icon-logo" viewBox="0 0 24 24" fill="var(--primary-light)" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.403a4.92 4.92 0 011.678 1.072 4.92 4.92 0 011.072 1.678c.163.46.347 1.26.403 2.43.058 1.266.07 1.645.07 4.849 0 3.204-.012 3.584-.07 4.85-.056 1.17-.24 1.97-.403 2.43a4.92 4.92 0 01-1.072 1.678 4.92 4.92 0 01-1.678 1.072c-.46.163-1.26.347-2.43.403-1.266.058-1.645.07-4.849.07-3.204 0-3.584-.012-4.85-.07-1.17-.056-1.97-.24-2.43-.403a4.902 4.902 0 01-1.678-1.072 4.902 4.902 0 01-1.072-1.678c-.163-.46-.347-1.26-.403-2.43-.058-1.266-.07-1.645-.07-4.849 0-3.204.012-3.584.07-4.85.056-1.17.24-1.97.403-2.43a4.92 4.92 0 011.072-1.678 4.92 4.92 0 011.678-1.072c.46-.163 1.26-.347 2.43-.403 1.266-.058 1.645-.07 4.849-.07M12 0C8.741 0 8.332.012 7.052.07 5.775.128 4.672.347 3.756.756a6.92 6.92 0 00-2.5 1.644A6.92 6.92 0 00.756 4.9c-.409.916-.628 2.019-.686 3.296C.012 8.332 0 8.741 0 12c0 3.259.012 3.668.07 4.948.058 1.277.277 2.38.686 3.296a6.932 6.932 0 001.644 2.5 6.932 6.932 0 002.5 1.644c.916.409 2.019.628 3.296.686C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.277-.058 2.38-.277 3.296-.686a6.932 6.932 0 002.5-1.644 6.932 6.932 0 001.644-2.5c.409-.916.628-2.019.686-3.296C23.988 15.668 24 15.259 24 12s-.012-3.668-.07-4.948c-.058-1.277-.277-2.38-.686-3.296a6.92 6.92 0 00-1.644-2.5 6.92 6.92 0 00-2.5-1.644c-.916-.409-2.019-.628-3.296-.686C15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998zm6.406-11.845a1.44 1.44 0 11-2.88 0 1.44 1.44 0 012.88 0z"/>
+              </svg>
+            </a>
+          </li>
+
+          {/* Facebook */}
+          <li>
+            <a href="https://www.facebook.com/jackson.fontaine.923/" target="_blank" rel="noreferrer">
+              <svg className="icon-logo" viewBox="0 0 24 24" fill="var(--primary-light)" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24h11.495v-9.294H9.69v-3.622h3.13V8.41c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.464.099 2.795.143v3.24h-1.918c-1.504 0-1.794.715-1.794 1.762v2.31h3.587l-.467 3.622h-3.12V24h6.116C23.407 24 24 23.407 24 22.676V1.325C24 .593 23.407 0 22.675 0z"/>
+              </svg>
+            </a>
+          </li>
+
+          <div className="vertical-line1" />
         </ul>
       </div>
 
@@ -23,9 +51,9 @@ const overlay = () => {
           <p>jacksonqfontaine@gmail.com</p>
         </a>
       </div>
-      <div className="vertical-line2"/>
+      <div className="vertical-line2" />
     </div>
-  )
-}
+  );
+};
 
-export default overlay
+export default Overlay;

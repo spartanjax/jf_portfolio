@@ -40,7 +40,9 @@ const featured = ({proj}) => {
           <h3 className="blurb">{proj.blurb}</h3>
           <div className="skills_feat">
             {proj.skills.map((skill) =>(
-            <div className="skill" key={skill}>{skill}</div>
+            <div className="skill" key={skill}>
+              <div className='skillText'>{skill}</div>
+            </div>
             ))}
           </div>
         </div>

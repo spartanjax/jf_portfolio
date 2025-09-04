@@ -28,7 +28,7 @@
 .hero-image img {
     width: 100%;
     border-radius: 50%;
-    border: black 2px solid;
+    border: var(--primary) 2px solid;
 }
 
 .hero-text{
@@ -63,7 +63,7 @@
 }
 
 hr {
-    border: 1px solid black;
+    border: 1px solid var(--primary);
 }
 
 .btn{

@@ -65,11 +65,12 @@
         }
         
         .blurb{
-            margin-top: -1rem;
+            margin-top: -0.5rem;
             margin-left: 1rem;
             font-weight: 500;
             margin-bottom: 10px;
             font-size: 0.8rem;
+            color: var(--neutral-light)
         }
 
 
@@ -103,7 +104,7 @@
   z-index: 100000;
   font-weight: 500;
   height: 30px;
-  margin-left: 10px;    
+  margin-left: 10px; 
   display: inline;
 }
   
@@ -119,7 +120,7 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: background-color 0.3s ease;
   cursor: default;
-  margin: 0px 5px;
+  margin: 5px 5px;
   z-index: 100000;
   align-items: right;
 
@@ -130,4 +131,8 @@
 
 .skill:hover {
   background-color: var(--tertiary); 
+}
+
+.skillText {
+  margin-top: 6px;
 }

@@ -8,12 +8,13 @@
 }
 
 .vertical-timeline-element-content p {
-    color: #7886C7;
+    color: var(--primary-light);
     font-size: 1rem;
     text-align: left;
     font-weight: 300;
     letter-spacing: 1px;
 }
+
 
 .icon{
     display: flex;
@@ -33,7 +34,7 @@
 }
 
 .vertical-timeline-element-content.bounce-in {
-    background-color: white;
+    background-color: var(--quaternary);
     color: var(--primary);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
