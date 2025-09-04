@@ -1,8 +1,17 @@
 import sign_img from "/images/database.png"
 import portfolio_img from "/images/portfolio.png"
 import nb_img from "/images/nbml.png"
+import gen_img from "/images/gen.png"
 
 let projects = [
+    {
+        key: 4,
+        title: "GenAI Playground",
+        blurb: "Project coming soon!",
+        skills: ["React", "Typescript", "Node.js", "AWS"],
+        project_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1&pp=ygUJcmljayByb2xsoAcB",
+        project_cover: gen_img
+    },
     {
         key: 3,
         title: "Technology Guesser",
