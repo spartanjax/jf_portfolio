@@ -8,7 +8,7 @@ let projects = [
         key: 4,
         title: "GenAI Playground",
         blurb: "Project coming soon!",
-        skills: ["React", "Typescript", "Node.js", "AWS"],
+        skills: ["React", "Typescript", "Node.js"],
         project_link: "https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1&pp=ygUJcmljayByb2xsoAcB",
         project_cover: gen_img
     },
