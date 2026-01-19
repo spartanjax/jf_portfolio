@@ -1,5 +1,15 @@
 let timeline_experience = [
     {
+        id: 5,
+        title: "Launch Safety Software Intern",
+        company: "Rocket Lab",
+        company_link: "https://rocketlabcorp.com/",
+        location: "Auckland, New Zealand",
+        description: "Worked within the Launch Safety Software team at Rocket Lab, focusing on developing internal tools to enhance safety protocols during launch operations. Utilized Python and FastAPI to build web applications, collaborated with cross-functional teams, and contributed to improving data management processes.",
+        date: "November 2025 - Now",
+        icon: "work",
+    },
+    {
         id: 4,
         title: "Frontend Developer Intern",
         company: "Strive Digital",
