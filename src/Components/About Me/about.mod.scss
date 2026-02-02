@@ -2,9 +2,8 @@
 
 .about {
     background: var(--bg-secondary);
-    padding: 2.5rem 0;
+    padding: 0.5rem 0;
     position: relative;
-
     &::before {
         content: '';
         position: absolute;
@@ -54,7 +53,7 @@
     .photo {
         max-width: 100%;
         width: 100%;
-        max-height: 320px;
+        max-height: 300px;
         object-fit: cover;
         border-radius: 16px;
         box-shadow: var(--shadow-lg);
@@ -150,5 +149,26 @@
     &:active {
         transform: translateY(0) scale(1);
         box-shadow: var(--shadow-md);
+    }
+}
+
+.skills-inline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 2rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-light);
+}
+
+.skill-group {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+
+    b {
+        color: var(--accent-primary);
+        font-weight: 600;
     }
 }

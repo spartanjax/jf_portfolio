@@ -3,8 +3,9 @@ import './about.mod.scss';
 import Section from '../Section/section';
 import FadeIn from "../FadeIn/FadeIn.jsx";
 import hockeyImg from "../../assets/aboutPhotos/hockey.jpg";
-import CV from '../../assets/cv.pdf'
-
+import CV from '../../assets/cv.pdf';
+import blurb from '../../assets/about_blurb.txt?raw';
+import skills from '../../assets/skills';
 
 
 const about = () => {
@@ -15,14 +16,15 @@ const about = () => {
             <div className='text_container'>
               <FadeIn direction="left" delay={400}>
                 <div id="blurb">
-                    <p><b>Hey there!</b> Thanks for stopping by. I'm Jackson, a problem solver at heart with a passion for coding, puzzles, and mathematics. Currently, I'm in my penultimate year pursuing a Bachelor of Science in Computer Science and Mathematics at the University of Auckland. I'm particularly fascinated by machine learning, algorithmic optimzation, and multivariable calculus.</p>
-                    <p id="second_p">Outside of tech, you'll often find me on the ice, playing hockey — a sport I’ve loved for years. I also enjoy staying active through the gym and running. I value spending quality time with friends and family, whether it's a casual hangout or an exciting adventure.</p>
+                  {blurb.trim().split(/\n\s*\n/).map((para, idx) => (
+                    <p key={idx} id={idx === 1 ? "second_p" : undefined} dangerouslySetInnerHTML={{ __html: para }} />
+                  ))}
                 </div>
               </FadeIn>
             </div>
             <div className='img_container'>
               <a
-                href={CV} // Change this to your actual file path or external URL
+                href={CV}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="resume-button"
@@ -30,13 +32,22 @@ const about = () => {
                 View Resume
               </a>
               <FadeIn direction="right" delay={400}>
-                <img className="photo" src={hockeyImg}></img>
+                <a href="https://www.eliteprospects.com/player/801617/jackson-fontaine" target="_blank" rel="noopener noreferrer">
+                  <img className="photo" src={hockeyImg}/>
+                </a>
               </FadeIn>
             </div>
           </div>
+          <FadeIn direction="up" delay={500}>
+            <div className="skills-inline">
+              <span className="skill-group"><b>Languages:</b> {skills.languages.join(' • ')}</span>
+              <span className="skill-group"><b>Frameworks:</b> {skills.frameworks.join(' • ')}</span>
+              <span className="skill-group"><b>Tools:</b> {skills.tools.join(' • ')}</span>
+            </div>
+          </FadeIn>
         </Section>
     </div>
   )
 }
-34
+
 export default about

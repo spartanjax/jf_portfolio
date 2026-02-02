@@ -115,7 +115,7 @@
         background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
         border-radius: 2px;
         margin: 1.5rem 0;
-        width: 80px;
+        width: 130px;
         transition: width 0.3s ease;
 
         @include breakpoint(small) {
@@ -133,7 +133,7 @@
 }
 
 .hero-container:hover .hero-text hr {
-    width: 120px;
+    width: 215px;
 }
 
 @keyframes gradientText {
