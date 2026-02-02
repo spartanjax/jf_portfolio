@@ -1,47 +1,68 @@
 .theme-toggle {
-  top: -5px;
   position: relative;
-  width: 70px;   // wider for smoother slide
-  height: 36px;  // taller for bigger circle
-  border-radius: 50px;
-  background-color: var(--secondary);
-  border: none;
+  width: 64px;
+  height: 32px;
+  border-radius: 16px;
+  background: var(--border-medium);
+  border: 2px solid var(--border-light);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  
+  &:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-primary);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
 
   .thumb {
     position: absolute;
-    top: 4px;
-    left: 4px;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: #fff;
+    top: 2px;
+    left: 2px;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background: white;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    z-index: 1;
 
     img {
-      width: 18px; 
-      height: 18px;
+      width: 16px;
+      height: 16px;
       object-fit: contain;
-      pointer-events: none; 
-      user-select: none;     
-      -webkit-user-drag: none; 
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
     }
   }
 
   &.dark {
-    background-color: var(--primary);
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+
+    &::before {
+      opacity: 1;
+    }
 
     .thumb {
-      transform: translateX(34px); // moves right
+      transform: translateX(32px);
     }
   }
 }

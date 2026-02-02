@@ -1,8 +1,8 @@
 @use '../../assets/mixins' as *;
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 
-#overlay{
+#overlay {
     position: fixed;
+    z-index: 900;
 
     @include breakpoint(small) {
         display: none;
@@ -11,69 +11,90 @@
 
 .icon-links {
     position: fixed;
-    left: 12px;
+    left: 24px;
     bottom: 0;
     z-index: 1000;
     display: flex;
+    align-items: center;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    li {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        &:hover {
+            transform: translateY(-4px);
+        }
+    }
 }
 
-#overlay .icon-links .icon-logo{
-    width: 30px;
+#overlay .icon-links .icon-logo {
+    width: 24px;
+    height: 24px;
     cursor: pointer;
-    padding-top: 10px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    fill: var(--text-tertiary);
+
+    &:hover {
+        fill: var(--accent-primary);
+        filter: drop-shadow(0 0 8px var(--accent-glow));
+    }
 }
 
-#overlay .icon-links .icon-logo:hover{
-    transform: translateY(-4px);
-    filter: drop-shadow(0 0 0.1rem black);
-}
-
-#overlay .icon-links ul{
-    list-style-type: none;
-}
-
-#overlay .email-link{
+#overlay .email-link {
     position: fixed;
     right: -188px;
     bottom: 270px;
     z-index: 1000;
     display: flex;
+
+    a {
+        transform: rotate(90deg);
+        transform-origin: left top 0;
+        float: left;
+        text-decoration: none;
+    }
+
+    p {
+        color: var(--text-tertiary);
+        font-weight: 600;
+        font-size: 0.9rem;
+        letter-spacing: 0.05em;
+        transition: all 0.3s ease;
+        margin: 0;
+        font-family: "Inter", sans-serif;
+
+        &:hover {
+            cursor: pointer;
+            color: var(--accent-primary);
+            transform: translateX(-4px);
+            filter: drop-shadow(0 0 8px var(--accent-glow));
+        }
+    }
 }
 
-#overlay .email-link a{
-    transform: rotate(90deg);
-    transform-origin: left top 0;
-    float: left;
+.vertical-line1 {
+    border-left: 2px solid var(--border-medium);
+    height: 100px;
+    margin-left: 11px;
+    margin-top: 1rem;
+    transition: border-color 0.3s ease;
 }
 
-
-#overlay .email-link p{
-    color: var(--primary);
-    font-weight: 600;
-    transition: 0.3s;
-    font-family: "Tajawal", serif;
-}
-
-#overlay .email-link p:hover{
-    cursor: pointer;
-    transform: translateX(-4px);
-    filter: drop-shadow(0 0 0.2rem black);
-}
-
-.vertical-line1{
-    border-left: 2px solid var(--primary);
-    height: 120px;
-    margin-left: 13px;
-}
-
-.vertical-line2{
+.vertical-line2 {
     position: fixed;
-    border-left: 2px solid var(--primary);
+    border-left: 2px solid var(--border-medium);
     height: 60px;
-    margin-right: 13px;
-    right: 12px;
+    margin-right: 11px;
+    right: 24px;
     bottom: 0;
+    transition: border-color 0.3s ease;
 }
-
-

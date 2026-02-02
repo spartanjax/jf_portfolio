@@ -1,123 +1,153 @@
 @use '../../assets/mixins' as *;
 
 .about {
-    background-color: var(--quaternary);
-    box-shadow: 0 0 4cqh rgba(0, 0, 0, 0.8);
+    background: var(--bg-secondary);
+    padding: 4rem 0;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
+    }
 }
 
 .container {
-    display:inline;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include breakpoint(medium) {
+        flex-direction: row;
+        gap: 3rem;
+        align-items: flex-start;
+    }
 }
 
 .text_container {
     width: 100%;
+    flex: 1;
+
+    @include breakpoint(medium) {
+        width: 60%;
+    }
 }
 
 .img_container {
-    display: inline;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     width: 100%;
-    overflow: hidden;
-    align-items: center;   // vertical centering
-    justify-content: center;    
-    
+    align-items: center;
+    justify-content: flex-start;
+
+    @include breakpoint(medium) {
+        width: 40%;
+        align-items: flex-end;
+    }
+
     .photo {
         max-width: 100%;
-        max-height: 220px;
-        margin-top: 5px;
+        width: 100%;
+        max-height: 320px;
         object-fit: cover;
-        box-shadow: 0 0 2cqh rgba(0, 0, 0, 0.4);
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+        border-radius: 16px;
+        box-shadow: var(--shadow-lg);
+        transition: all 0.3s ease;
+        border: 2px solid var(--border-light);
 
-    .photo:hover{
-        cursor: pointer;
-
-    }
-}
-
-@include breakpoint(medium){
-    .container {
-        display: flex;
-    }
-
-    .text_container {
-        margin-top: 20px;
-        width: 60%;
-    }
-
-    .img_container {
-        width: 40%;
+        &:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-glow);
+            cursor: pointer;
+        }
     }
 }
-
 
 .text_container #blurb {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: left;
-    width: 100%;
-    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 1rem;
 }
- 
-.about #blurb p{
-    color: var(--primary);
-    font-size: 1rem;
-    text-align: left;
-    font-weight: 300;
-    letter-spacing: 0.8px;
-    margin-top: -20px;
 
-    @include breakpoint(large){
+.about #blurb p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    text-align: left;
+    font-weight: 400;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    margin: 0;
+
+    b {
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    @include breakpoint(large) {
         font-size: 1.1rem;
     }
 
-    @include breakpoint(xlarge){
-        font-size: 1.3rem;
+    @include breakpoint(xlarge) {
+        font-size: 1.15rem;
     }
 }
 
-#second_p{
-    margin-top: -20px;
+#second_p {
+    margin-top: 0;
 }
 
 .resume-button {
-    padding: 12px 24px;
-    background-color: var(--primary); // Customize or use a color directly
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     color: white;
     font-size: 1rem;
     font-weight: 600;
     border: none;
-    border-radius: 999px; // fully rounded
+    border-radius: 10px;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
     width: fit-content;
-    width: 60%;
-    margin-left: 20%;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center; // or 'flex-start', etc.
-    overflow: hidden; // prevent scrollbars
+    margin: 1.5rem auto 1rem;
 
-    @include breakpoint(medium){
-        margin-top: 30px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
     }
 
-    @include breakpoint(large){
-        margin-top: 10px;
+    @include breakpoint(medium) {
+        margin: 2rem 0 1rem;
     }
 
     &:hover {
-        background-color: var(--secondary); // Slight hover change
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: var(--shadow-glow);
+
+        &::before {
+            left: 100%;
+        }
     }
 
     &:active {
-        transform: translateY(0);
-        box-shadow: none;
+        transform: translateY(0) scale(1);
+        box-shadow: var(--shadow-md);
     }
 }

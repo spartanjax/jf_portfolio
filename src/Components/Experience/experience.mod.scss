@@ -5,39 +5,79 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    background: var(--bg-primary);
+    padding: 2rem 0;
 }
 
-.vertical-timeline-element-content p {
-    color: var(--primary-light);
-    font-size: 1rem;
-    text-align: left;
-    font-weight: 300;
-    letter-spacing: 1px;
-}
+.vertical-timeline-element-content {
+    background: var(--bg-elevated) !important;
+    border: 1px solid var(--border-light) !important;
+    box-shadow: var(--shadow-lg) !important;
+    border-radius: 16px !important;
+    transition: all 0.3s ease !important;
 
+    &:hover {
+        border-color: var(--accent-primary) !important;
+        box-shadow: var(--shadow-glow) !important;
+        transform: translateY(-2px);
+    }
 
-.icon{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    margin: 10% auto;
+    h3 {
+        color: var(--text-primary) !important;
+        font-weight: 700 !important;
+        font-size: 1.25rem !important;
+        margin-bottom: 0.5rem !important;
 
-    @include breakpoint(experience){
-        margin-top: 14px;
+        a {
+            color: var(--accent-primary) !important;
+            transition: color 0.3s ease !important;
+
+            &:hover {
+                color: var(--accent-secondary) !important;
+                opacity: 1 !important;
+            }
+        }
+    }
+
+    h5 {
+        color: var(--text-tertiary) !important;
+        font-weight: 500 !important;
+        font-size: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    p {
+        color: var(--text-secondary) !important;
+        font-size: 1rem !important;
+        text-align: left !important;
+        font-weight: 400 !important;
+        line-height: 1.7 !important;
+        letter-spacing: 0.01em !important;
     }
 }
 
-.vertical-timeline-element-date{
-    margin-top: -15px;
-    margin-bottom: -15px;
+.vertical-timeline::before {
+    background: var(--border-medium) !important;
 }
 
-.vertical-timeline-element-content.bounce-in {
-    background-color: var(--quaternary);
-    color: var(--primary);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+.vertical-timeline-element-date {
+    color: var(--text-tertiary) !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    opacity: 1 !important;
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    margin: 10% auto;
+    filter: brightness(1.1);
+
+    @include breakpoint(experience) {
+        margin-top: 14px;
+    }
 }
 
 #description {
@@ -45,6 +85,6 @@
     width: 100%;
 }
 
-a:hover{
-    opacity: 0.7;
+a:hover {
+    opacity: 0.8;
 }

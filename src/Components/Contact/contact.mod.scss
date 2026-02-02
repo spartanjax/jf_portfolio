@@ -1,11 +1,45 @@
-.contact {
-    margin-top: 200px;
-    margin-bottom: 100px;
+@use '../../assets/mixins' as *;
 
-    p{
+.contact {
+    margin-top: 8rem;
+    margin-bottom: 6rem;
+    padding: 4rem 2rem;
+    text-align: center;
+    position: relative;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--border-medium), transparent);
+    }
+
+    p {
         text-align: center;
-        color: var(--primary);
-        font-size: 1.5rem;
+        color: var(--text-secondary);
+        font-size: clamp(1.1rem, 2vw, 1.4rem);
+        line-height: 1.8;
+        max-width: 700px;
+        margin: 0 auto;
+        font-weight: 400;
+
+        b {
+            color: var(--accent-primary);
+            font-weight: 600;
+            transition: color 0.3s ease;
+            cursor: pointer;
+
+            &:hover {
+                color: var(--accent-secondary);
+            }
+        }
+    }
+
+    @include breakpoint(medium) {
+        padding: 5rem 2rem;
     }
 }
-
