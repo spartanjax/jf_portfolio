@@ -1,65 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-/* Color Palette:
-White: #FFF2F2
-Light Blue: #A9B5DF
-Blue: #7886C7
-Dark Blue: #2D336B */
-
+/* Modern Color System */
 :root {
-  /* Light mode */
-  --primary: #2D336B;         /* Deep blue */
-  --primary-light: #5058A4;   /* Softer blue */
-  --secondary: #A9B5DF;       /* Muted lavender-blue */
-  --secondary-light: #C7D0EB; /* Pale lavender */
-  --tertiary: #7886C7;        /* Medium blue-purple */
-  --tertiary-dark: #5D68A5;   /* Deeper purple-blue */
-  --quaternary: #FFF2F2;      /* Very soft pink */
-  --quaternary-dark: #F5DADA; /* Warm neutral */
+  /* Light Mode - Clean & Professional */
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8FAFC;
+  --bg-tertiary: #F1F5F9;
+  --bg-elevated: #FFFFFF;
 
-  /* Neutral grays (useful in between accents) */
-  --neutral-light: #5D68A5;
-  --neutral-mid: #B0B0C0;
-  --neutral-dark: #4A4A5A;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-tertiary: #64748B;
+
+  --accent-primary: #3B82F6;        /* Vibrant blue */
+  --accent-primary-light: #60A5FA;
+  --accent-primary-dark: #2563EB;
+
+  --accent-secondary: #8B5CF6;      /* Purple */
+  --accent-secondary-light: #A78BFA;
+
+  --accent-glow: rgba(59, 130, 246, 0.2);
+
+  --border-light: #E2E8F0;
+  --border-medium: #CBD5E1;
+  --border-dark: #94A3B8;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px var(--accent-glow);
+
+  --icon-filter: none;
 }
 
 :root[data-theme="dark"] {
-  --primary: #A9B5DF;          /* Swap values */
-  --primary-light: #e5e4e4;
-  --secondary: #2D336B;
-  --secondary-light: #1F244E;
-  --tertiary: #4A4A6A;
-  --tertiary-dark: #6C6C8A;
-  --quaternary: #1A1A1A;
-  --quaternary-dark: #2A2A2A;
+  /* Dark Mode - Sophisticated & Modern */
+  --bg-primary: #0F172A;            /* Rich dark blue-gray */
+  --bg-secondary: #1E293B;          /* Slightly lighter */
+  --bg-tertiary: #334155;           /* Card backgrounds */
+  --bg-elevated: #1E293B;
 
-  /* Neutral grays for dark mode */
-  --neutral-light: #d6d6de;
-  --neutral-mid: #606070;
-  --neutral-dark: #101010;
+  --text-primary: #F1F5F9;
+  --text-secondary: #CBD5E1;
+  --text-tertiary: #94A3B8;
+
+  --accent-primary: #60A5FA;        /* Bright blue */
+  --accent-primary-light: #93C5FD;
+  --accent-primary-dark: #3B82F6;
+
+  --accent-secondary: #A78BFA;      /* Bright purple */
+  --accent-secondary-light: #C4B5FD;
+
+  --accent-glow: rgba(96, 165, 250, 0.15);
+
+  --border-light: #334155;
+  --border-medium: #475569;
+  --border-dark: #64748B;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 30px var(--accent-glow), 0 0 60px rgba(96, 165, 250, 0.1);
+
+  --icon-filter: invert(1) brightness(0.9);
 }
-
-// :root[data-theme="dark"] {
-//   --primary: #B69EFF;          /* Soft purple accent */
-//   --primary-light: #E2D8FF;    /* Light lavender highlight */
-//   --secondary: #5A33A1;        /* Deep royal purple */
-//   --secondary-light: #3C2573;  /* Muted purple-blue tone */
-//   --tertiary: #7B68EE;         /* Medium vibrant purple */
-//   --tertiary-dark: #6046B6;    /* Darker purple variant */
-//   --quaternary: #1A1425;       /* Near-black purple background */
-//   --quaternary-dark: #241934;  /* Slightly lighter dark background */
-
-//   /* Neutral grays with purple undertone */
-//   --neutral-light: #DAD2E8;
-//   --neutral-mid: #8B82A3;
-//   --neutral-dark: #120E18;
-// }
-
-
 
 .portfolio {
   position: relative;
-  z-index: 10000;
+  z-index: 1;
 }
 
 main {
@@ -73,10 +83,11 @@ html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  // overflow-x: hidden;
+  background: var(--bg-primary);
+  transition: background-color 0.3s ease;
 }
 
-/* Static Animated Gradient (does NOT follow mouse) */
+/* Sophisticated Animated Gradient Background */
 .background-gradient {
   position: fixed;
   top: 0;
@@ -84,36 +95,17 @@ html, body {
   width: 100%;
   height: 100%;
   background: linear-gradient(
-  -45deg,
-  var(--quaternary),       /* very pale */
-  var(--secondary-light),  /* light/pale */
-  var(--tertiary),         /* medium */
-  var(--secondary),    /* deeper */
-  var(--tertiary),         /* medium */
-  var(--secondary-light)   /* light blue */
-);
-
+    135deg,
+    var(--bg-primary) 0%,
+    var(--bg-secondary) 50%,
+    var(--bg-primary) 100%
+  );
   background-size: 400% 400%;
-  animation: gradientShift 10s ease infinite;
+  animation: gradientShift 15s ease infinite;
   z-index: -100;
   pointer-events: none;
 }
 
-/* Glowing Light that Follows Mouse */
-.background-glow {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(
-    circle at var(--x, 50%) var(--y, 50%),
-    rgba(0, 0, 0, 0.2),
-    transparent 90%
-  );
-  z-index: -99;
-  pointer-events: none;
-}
 
 @keyframes gradientShift {
   0% {
@@ -129,53 +121,84 @@ html, body {
 
 
 
-*{
-    font-family: "Tajawal", serif;
+/* Global Styles */
+* {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-a{
-    text-decoration: NONE;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Space Grotesk", "Inter", sans-serif;
+    font-weight: 600;
+}
+
+a {
+    text-decoration: none;
     color: inherit;
     line-height: 1;
     cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.container{
+a:hover {
+    color: var(--accent-primary);
+}
+
+.container {
     padding-left: 3%;
     padding-right: 3%;
 }
 
-
-.popup{
+/* Enhanced Animation Classes */
+.popup {
     opacity: 0;
-    scale: 0.5;
-    transition: all 1s;
+    transform: scale(0.9);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hidden-right{
+.hidden-right {
     opacity: 0;
-    filter: blur(5px);
-    transform: translateX(100px);
-    transition: all 1s;
+    filter: blur(8px);
+    transform: translateX(60px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hidden-left{
+.hidden-left {
     opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100px);
-    transition: all 1s;
+    filter: blur(8px);
+    transform: translateX(-60px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .show {
-    opacity:1;
+    opacity: 1;
     filter: blur(0);
-    transform: translateX(0);
-    scale: 1;
+    transform: translateX(0) scale(1);
+    will-change: opacity, transform;
 }
 
-.show {
-    will-change: opacity, transform;
-  }
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
+}
+
+/* Selection Styling */
+::selection {
+    background: var(--accent-primary);
+    color: white;
+}

@@ -1,140 +1,250 @@
 @use '../../assets/mixins' as *;
 
-.proj_container{
-    transition: transform 0.1s ease-in-out;
+.proj_container {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.28s ease;
+    transform-origin: center;
 
     &:hover {
-        transform: translateY(-1px);
-        opacity: 0.95;
+        transform: translateY(-4px);
+        z-index: 2;
+    }
+
+    &.hovered {
+        z-index: 60; /* ensure the whole container (and the slideout) is above neighbors */
     }
 }
 
 .project {
     position: relative;
-    justify-content: space-between;
-    background-color: var(--quaternary);
-    min-height: 125px;
+    background: var(--bg-elevated);
+    min-height: 280px;
     padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1); // Subtle shadow
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: all 0.3s ease;
 
     @include breakpoint(medium) {
-       min-height: 170px;
-    }
-
-    @include breakpoint(large) {
-       min-height: 200px;
-    }
-
-    @include breakpoint(xlarge) {
        min-height: 300px;
     }
 
-    h1 {
-        top: 15px;
-        position: absolute;
-        z-index: 1;
-        font-size: 1.3rem;
-        font-weight: 600;
-        color: var(--primary);
-        margin-left: -1rem;
-        margin-top: -1.5rem;
-    }
-
-    .blurb{
-        top: 45px;
-        position: absolute;
-        z-index: 1;
-        margin-top: -1rem;
-        font-weight: 500;
-        color: var(--primary-light);
-    }
-
-    .skills{
-        z-index: 100000;
-        position: absolute;
-        font-weight: 500;
-        bottom: 5px;
-        width: 100%;
-        left: 5px;
-        height: 30px;
-    }
-        
-    .skill {
-    display: inline-block;   /* inline behavior */
-    background-color: var(--secondary); /* nice green background, adjust as you like */
-    color: white;            /* text color */
-    padding: 6px 12px;       /* some padding */
-    border-radius: 20px;     /* rounded edges */
-    font-size: 0.9rem;
-    font-weight: 500;
-    user-select: none;       /* optional: prevent text selection */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    transition: background-color 0.3s ease;
-    cursor: default;
-    margin: -5px 5px;
-    z-index: 100000;
-    align-items: right;
-
     @include breakpoint(large) {
-        font-size: 1.1rem;
-    }
-    }
-
-    .skill:hover {
-    background-color: var(--tertiary); 
+       min-height: 320px;
     }
 
+    @include breakpoint(xlarge) {
+       min-height: 360px;
+    }
+
+    &:hover {
+        border-color: var(--accent-primary);
+        box-shadow: var(--shadow-glow);
+
+        h1 {
+            color: var(--accent-primary);
+        }
+    }
+
+    h1 {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        z-index: 2;
+        font-size: clamp(1.1rem, 2vw, 1.5rem);
+        font-weight: 700;
+        color: var(--text-primary);
+        margin: 0;
+        transition: color 0.3s ease;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .blurb {
+        position: absolute;
+        top: 3.5rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        z-index: 3;
+        font-weight: 400;
+        font-size: 0.95rem;
+        color: var(--text-secondary);
+        line-height: 1.5;
+        text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+
+        @include breakpoint(large) {
+            font-size: 1rem;
+        }
+    }
+
+    .skills {
+        position: absolute;
+        bottom: 1rem;
+        left: 1rem;
+        right: 1rem;
+        z-index: 3;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .skill {
+        display: inline-flex;
+        align-items: center;
+        background: var(--accent-primary);
+        color: white;
+        padding: 6px 14px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        user-select: none;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+        cursor: default;
+
+        @include breakpoint(large) {
+            font-size: 0.9rem;
+            padding: 7px 16px;
+        }
+
+        &:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+    }
+
+    /* default: image is slightly blurred and faded */
     img {
-        filter: blur(1px);
-        -webkit-filter: blur(1px);
-        opacity: 0.6;
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
+        opacity: 0.35;
         position: absolute;
         z-index: 0;
         top: 0;
         left: 0;
-        width: 100%;  // Makes the image take the full width of the container
-        height: 100%; // Ensures it also takes the full height
-        object-fit: cover; // Prevents distortion while making sure the entire container is filled
-        border-radius: 10px; // Optional: Keeps rounded corners consistent
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 16px;
+        transition: all 0.35s ease;
     }
 
-    @include breakpoint(medium) {
-        h1 {
-            font-size: 1.5rem;
-        }
+    /* unblur image when its container is hovered */
+    .proj_container.hovered & img,
+    &:hover img {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1.03);
     }
 
     @include breakpoint(small) {
         h1 {
             font-size: 1.2rem;
         }
-        .blurb{
-            top: 43px;
-        }
-        h3{
-            font-size: 0.8rem;
+
+        .blurb {
+            top: 3.2rem;
+            font-size: 0.9rem;
         }
     }
-
 }
 
-.spacing_container{
-    width: 90%;
-    margin-left: 5%;
+/* Overlay description panel (slides in from above and slides away) */
+.desc {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    /* start above the card so it can slide down into view */
+    transform: translate(-50%, -120%);
+    width: min(92%, 420px);
+    max-height: 72%;
+    z-index: 80; /* sits above the card */
+    background: linear-gradient(135deg, var(--bg-elevated), var(--bg-tertiary));
+    border: 1px solid var(--border-medium);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    transition: transform 0.28s cubic-bezier(0.2,0,0,1), opacity 0.2s ease;
+    pointer-events: none;
+    overflow: auto;
+}
+
+/* show overlay on hover or focus: slide into centered position */
+.proj_container.hovered .desc,
+.proj_container .desc:focus-within {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* compact layout: also slide from above and cover more of the card area */
+.proj_container.compact .desc {
+    width: 92%;
+    max-height: 68%;
+    transform: translate(-50%, -140%);
+}
+
+.proj_container.compact.hovered .desc {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* subtle top accent bar using theme accent gradient */
+.desc::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 6px;
+    border-radius: 12px 12px 0 0;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+}
+
+.desc_inner {
+    position: relative; /* keep content above the accent bar */
+    padding-top: 0.6rem;
+}
+
+.desc_inner h4 {
+    margin: 0 0 0.4rem 0;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.desc_inner p {
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.spacing_container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    @include breakpoint(medium) {
+        padding: 0 2rem;
+    }
 }
 
 .project_grid {
     position: relative;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    margin-top: 2rem;
-    margin-bottom: 5rem;
+    margin-top: 3rem;
+    margin-bottom: 4rem;
     gap: 1rem;
 
     @include breakpoint(large) {
         grid-template-columns: repeat(2, 1fr);
-     }
+        gap: 0 2rem;
+    }
 }
-
-
