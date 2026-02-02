@@ -9,8 +9,11 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css'
 
 const Experience = () => {
-  let workIconStyles = { background: "#06D6A0" }
-  let schoolIconStyles = { background: "#f9c74f" }
+  let iconStyles = {
+    background: "var(--bg-elevated)",
+    border: "2px solid var(--border-medium)",
+    boxShadow: "var(--shadow-md)"
+  }
 
   return (
     <div className="experience" id='experience'>
@@ -19,20 +22,20 @@ const Experience = () => {
           {timelineElements.map(element => {
             let isWorkIcon = element.icon === "work";
             return (
-              <VerticalTimelineElement 
+              <VerticalTimelineElement
                 key={element.id}
                 date={element.date}
                 dateClassName="date"
-                lineColor="var(--primary)"
-                iconStyle={isWorkIcon ? workIconStyles : schoolIconStyles}
-                contentStyle={{ 
-                  background: "var(--quaternary)", 
-                  color: "var(--primary)",
+                lineColor="var(--border-medium)"
+                iconStyle={iconStyles}
+                contentStyle={{
+                  background: "var(--bg-elevated)",
+                  color: "var(--text-primary)",
                 }}
-                contentArrowStyle={{ 
-                  borderRight: "7px solid var(--quaternary)" 
+                contentArrowStyle={{
+                  borderRight: "7px solid var(--bg-elevated)"
                 }}
-                icon={isWorkIcon ? <img src={work} alt="work" className="icon"/> : <img src={school} alt="school" className="icon"/>}
+                icon={isWorkIcon ? <img src={work} alt="work" className="timeline-icon"/> : <img src={school} alt="school" className="timeline-icon"/>}
               >
                 <h3 className="vertical-timeline-element-title">
                   {element.title} - <u><a href={element.company_link} target="_blank" rel="noreferrer">{element.company}</a></u>

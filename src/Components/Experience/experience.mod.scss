@@ -67,16 +67,26 @@
     opacity: 1 !important;
 }
 
-.icon {
+.timeline-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28px;
-    margin: 10% auto;
-    filter: brightness(1.1);
+    width: 24px;
+    height: 24px;
+    margin: auto;
+    filter: var(--icon-filter, none);
+    opacity: 0.9;
+}
 
-    @include breakpoint(experience) {
-        margin-top: 14px;
+.vertical-timeline-element-icon {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.3s ease !important;
+
+    &:hover {
+        border-color: var(--accent-primary) !important;
+        transform: scale(1.05);
     }
 }
 

@@ -56,12 +56,12 @@ nav ul li {
 
 .upArrow {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(-10px);
   transition: all 0.3s ease;
   pointer-events: none;
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  top: 24px;
+  left: 24px;
   font-size: 32px;
   font-weight: 700;
   cursor: pointer;

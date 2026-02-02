@@ -2,7 +2,7 @@
 
 .about {
     background: var(--bg-secondary);
-    padding: 4rem 0;
+    padding: 2.5rem 0;
     position: relative;
 
     &::before {
@@ -19,11 +19,11 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 
     @include breakpoint(medium) {
         flex-direction: row;
-        gap: 3rem;
+        gap: 2rem;
         align-items: flex-start;
     }
 }
@@ -40,7 +40,7 @@
 .img_container {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
     width: 100%;
     align-items: center;
     justify-content: flex-start;
@@ -48,6 +48,7 @@
     @include breakpoint(medium) {
         width: 40%;
         align-items: flex-end;
+        margin-top: -0.5rem;
     }
 
     .photo {
@@ -71,8 +72,8 @@
 .text_container #blurb {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-top: 1rem;
+    gap: 1rem;
+    margin-top: 0;
 }
 
 .about #blurb p {
@@ -106,7 +107,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 32px;
+    padding: 12px 28px;
     background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
     color: white;
     font-size: 1rem;
@@ -120,7 +121,7 @@
     position: relative;
     overflow: hidden;
     width: fit-content;
-    margin: 1.5rem auto 1rem;
+    margin: 1rem auto 0;
 
     &::before {
         content: '';
@@ -134,7 +135,7 @@
     }
 
     @include breakpoint(medium) {
-        margin: 2rem 0 1rem;
+        margin: 1rem 0 0;
     }
 
     &:hover {
