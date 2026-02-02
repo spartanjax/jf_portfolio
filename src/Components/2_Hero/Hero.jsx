@@ -15,9 +15,10 @@ const Hero = () => {
   
   return (
     <div className='hero-container' id='hero'>
-      <div className='hero-image'>
-        <img className="" src={heroImg} alt="heroImg" />
-      </div>
+      <div className='hero-inner'>
+        <div className='hero-image'>
+          <img className="" src={heroImg} alt="heroImg" />
+        </div>
         <div className='hero-text'>
             <h1>Jackson</h1><h1>Fontaine</h1>
             <hr></hr>
@@ -27,6 +28,7 @@ const Hero = () => {
             <a className="btn" href={CV} target="_blank">Resume</a> */}
             {/* onClick={()=>download(CV)} */}
         </div>
+      </div>
     </div>
   )
 }

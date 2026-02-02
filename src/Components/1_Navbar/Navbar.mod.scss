@@ -35,21 +35,11 @@ nav {
   align-items: center;
   justify-content: flex-end;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 0 0 0 16px;
-  border: 1px solid var(--border-light);
-  border-top: none;
-  border-right: none;
-  box-shadow: var(--shadow-lg);
+  background: transparent;
   transition: all 0.3s ease;
 
   @include breakpoint(small) {
-    background: transparent;
-    backdrop-filter: none;
-    border: none;
-    box-shadow: none;
+    padding: 16px;
   }
 
   .wrapper {
@@ -66,18 +56,18 @@ nav ul li {
 
 .upArrow {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(10px);
   transition: all 0.3s ease;
   pointer-events: none;
   position: fixed;
-  top: 24px;
-  left: 24px;
+  bottom: 24px;
+  right: 24px;
   font-size: 32px;
   font-weight: 700;
   cursor: pointer;
   border: none;
   z-index: 1100;
-  color: var(--text-primary);
+  color: white;
   background: var(--accent-primary);
   width: 48px;
   height: 48px;
@@ -170,11 +160,12 @@ nav ul li {
   height: 24px;
   z-index: 10000;
   position: fixed;
-  top: 28px;
-  right: 28px;
+  top: 24px;
+  right: 20px;
   padding: 4px;
   border-radius: 8px;
   transition: all 0.3s ease;
+  box-sizing: content-box;
 
   &:hover {
     background: rgba(59, 130, 246, 0.1);
@@ -225,13 +216,13 @@ nav ul li {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
     position: fixed;
-    right: 0;
-    top: 0;
-    width: 100%;
+    right: 16px;
+    top: 60px;
+    width: calc(100% - 32px);
+    max-width: 300px;
     align-items: center;
     max-height: 1000px;
     z-index: 999;
-    padding-top: 80px;
 
     &.collapsed {
         flex-direction: column;
@@ -249,7 +240,7 @@ nav ul li {
     &.collapsed.open {
         display: flex;
         max-height: 500px;
-        padding: 80px 2rem 2rem;
+        padding: 1.5rem;
         opacity: 1;
     }
 
