@@ -41,7 +41,11 @@
     height: 24px;
     cursor: pointer;
     transition: all 0.3s ease;
-    fill: var(--text-tertiary);
+    fill: var(--accent-primary-dark);
+
+    :root[data-theme="dark"] & {
+        fill: var(--accent-primary-light);
+    }
 
     &:hover {
         fill: var(--accent-primary);
@@ -64,13 +68,17 @@
     }
 
     p {
-        color: var(--text-tertiary);
+        color: var(--accent-primary-dark);
         font-weight: 600;
         font-size: 0.9rem;
         letter-spacing: 0.05em;
         transition: all 0.3s ease;
         margin: 0;
         font-family: "Inter", sans-serif;
+
+        :root[data-theme="dark"] & {
+            color: var(--accent-primary-light);
+        }
 
         &:hover {
             cursor: pointer;

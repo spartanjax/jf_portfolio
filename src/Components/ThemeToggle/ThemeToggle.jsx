@@ -6,7 +6,7 @@ import "./ThemeToggle.mod.scss";
 const ThemeToggle = () => {
   // ✅ initialize directly from localStorage (no flicker / reset)
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "light";
+    return localStorage.getItem("theme") || "dark";
   });
 
   // Apply + save theme whenever it changes

@@ -32,9 +32,9 @@
         bottom: -8px;
         left: 50%;
         transform: translateX(-50%);
-        width: 60px;
+        width: 100px;
         height: 3px;
-        background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+        background: linear-gradient(90deg, var(--accent-primary-dark), var(--accent-primary-light));
         border-radius: 2px;
     }
 }
