@@ -1,29 +1,16 @@
 import React from 'react';
-import Overlay from './Components/Overlay/overlay';
-import Navbar from './Components/1_Navbar/Navbar';
-import Hero from './Components/2_Hero/Hero';
-import About from './Components/About Me/about';
-import Experience from './Components/Experience/experience';
-import Projects from './Components/Projects/projects';
-import Contact from "./Components/Contact/contact";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Portfolio from './pages/Portfolio';
+import PutMeOnConcept from './pages/PutMeOnConcept';
 
 const App = () => {
   return (
-    <>
-      {/* Main Content */}
-      <div className="portfolio">
-        <Overlay />
-        <Navbar />
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Contact />
-      </div>
-
-      {/* Animated Background Layer */}
-      <div className="background-gradient" />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/jf_portfolio" element={<Portfolio />} />
+        <Route path="/put_me_on" element={<PutMeOnConcept />} />
+      </Routes>
+    </Router>
   );
 };
 

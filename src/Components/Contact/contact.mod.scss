@@ -43,3 +43,14 @@
         padding: 5rem 2rem;
     }
 }
+
+.Link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: var(--accent-secondary);
+    }
+}
